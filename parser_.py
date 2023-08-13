@@ -7,7 +7,7 @@ from scipy.optimize import curve_fit
 F_PATTERN = """
 def objective_{}(x, {}):
 	return {}
-    
+
 """
 # def func(x, **kwargs):
 #     return kwargs["a"] + kwargs["b"] / x
@@ -17,10 +17,10 @@ def objective_{}(x, {}):
 #     return func(x, *args)
 
 
-# def make_obj_function(s, num):
-#     letters = findall("[a-wyzA-WYZ] ", s)
-#     # with open("objective.py", "a", encoding="utf-8") as file:
-#     #     file.write(F_PATTERN.format(num, ",".join(letters), s))
+def make_obj_function(s, num):
+    letters = findall("[a-wyzA-WYZ] ", s)
+    with open("objective.py", "a", encoding="utf-8") as file:
+        file.write(F_PATTERN.format(num, ",".join(letters), s))
 
 
 
