@@ -1,0 +1,10 @@
+a + b / x
+a + b / log( x )
+a + b / ( x ** 2 )
+a + b / ( x ** 1.5 )
+a + b / ( x ** 0.5 )
+a + b * log( x )
+a + b * x
+a + b * x ** 0.5 * log( x )
+a + b * log( x ) / ( x ** 2 )
+a + b * x ** 2.5
