@@ -125,3 +125,21 @@ def objective_104(x, a, b):
 
 def objective_104_sqrt(x, a, b):
     return np.sqrt(a+b*(np.e)**((-x)))
+
+def objective_3222(x, a, b, c):
+    return a+b*(x)+c*((x)**(2))
+
+def objective_3222_sqrt(x, a, b, c):
+    return np.sqrt(a+b*(x)+c*((x)**(2)))
+
+def objective_3223(x, a, b, c, d):
+    return a+b*(x)+c*((x)**(2))+d*((x)**(3))
+
+def objective_3223_sqrt(x, a, b, c, d):
+    return np.sqrt(a+b*(x)+c*((x)**(2))+d*((x)**(3)))
+
+def objective_3224(x, a, b, c, d, e):
+    return a+b*(x)+c*((x)**(2))+d*((x)**(3))+e*((x)**(4))
+
+def objective_3224_sqrt(x, a, b, c, d, e):
+    return np.sqrt(a+b*(x)+c*((x)**(2))+d*((x)**(3))+e*((x)**(4)))

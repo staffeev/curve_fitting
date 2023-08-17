@@ -9572,3 +9572,222 @@ def objective_3210(x, a, b, c, d, e, f, g, h, i, j):
 
 def objective_3211(x, a, b, c, d, e, f, g, h, i, j, k):
     return a+b*(x)+c*((x)**(2))+d*((x)**(3))+e*((x)**(4))+f*((x)**(5))+g*((x)**(6))+h*((x)**(7))+i*((x)**(8))+j*((x)**(9))+k*((x)**(10))
+
+def objective_3212(x, a, b, c, d):
+    return np.e ** (a+b*(x)+c*((x)**(2))+d*((x)**(3)))
+
+def objective_3213(x, a, b, c, d, e):
+    return np.e ** (a+b*(x)+c*((x)**(2))+d*((x)**(3))+e*((x)**(4)))
+
+def objective_3214(x, a, b, c, d, e, f):
+    return np.e ** (a+b*(x)+c*((x)**(2))+d*((x)**(3))+e*((x)**(4))+f*((x)**(5)))
+
+def objective_3215(x, a, b, c, d):
+    return (a+b*(x)+c*((x)**(2))+d*((x)**(3))) ** (-1)
+
+def objective_3216(x, a, b, c, d, e):
+    return (a+b*(x)+c*((x)**(2))+d*((x)**(3))+e*((x)**(4))) ** (-1)
+
+def objective_3217(x, a, b, c, d, e, f):
+    return (a+b*(x)+c*((x)**(2))+d*((x)**(3))+e*((x)**(4))+f*((x)**(5))) ** (-1)
+
+def objective_3218(x, a, b, c):
+    return (a+b*(x)+c*((x)**(2))) ** 2
+
+def objective_3219(x, a, b, c, d):
+    return (a+b*(x)+c*((x)**(2))+d*((x)**(3))) ** 2
+
+def objective_3220(x, a, b, c, d, e):
+    return (a+b*(x)+c*((x)**(2))+d*((x)**(3))+e*((x)**(4))) ** 2
+
+def objective_3221(x, a, b, c, d, e, f):
+    return (a+b*(x)+c*((x)**(2))+d*((x)**(3))+e*((x)**(4))+f*((x)**(5))) ** 2
+
+def objective_3225(x, a, b, c, d, e, f):
+    return a+b*(x)+c/(x)+d*((x)**(2))+e/((x)**(2))+f*((x)**(3))
+
+def objective_3226(x, a, b, c, d, e, f, g):
+    return a+b*(x)+c/(x)+d*((x)**(2))+e/((x)**(2))+f*((x)**(3))+g/((x)**(3))
+
+def objective_3227(x, a, b, c, d, e, f, g, h):
+    return a+b*(x)+c/(x)+d*((x)**(2))+e/((x)**(2))+f*((x)**(3))+g/((x)**(3))+h*((x)**(4))
+
+def objective_3228(x, a, b, c, d, e, f, g, h, i):
+    return a+b*(x)+c/(x)+d*((x)**(2))+e/((x)**(2))+f*((x)**(3))+g/((x)**(3))+h*((x)**(4))+i/((x)**(4))
+
+def objective_3229(x, a, b, c, d, e, f, g, h, i, j):
+    return a+b*(x)+c/(x)+d*((x)**(2))+e/((x)**(2))+f*((x)**(3))+g/((x)**(3))+h*((x)**(4))+i/((x)**(4))+j*((x)**(5))
+
+def objective_3230(x, a, b, c, d, e, f, g, h, i, j, k):
+    return a+b*(x)+c/(x)+d*((x)**(2))+e/((x)**(2))+f*((x)**(3))+g/((x)**(3))+h*((x)**(4))+i/((x)**(4))+j*((x)**(5))+k/((x)**(5))
+
+def objective_3231(x, a, b, c, d):
+    return a+b*(np.log(x))+c*((np.log(x)))**(2)+d*((np.log(x)))**(3)
+
+def objective_3232(x, a, b, c, d, e):
+    return a+b*(np.log(x))+c*((np.log(x)))**(2)+d*((np.log(x)))**(3)+e*((np.log(x)))**(4)
+
+def objective_3233(x, a, b, c, d, e, f):
+    return a+b*(np.log(x))+c*((np.log(x)))**(2)+d*((np.log(x)))**(3)+e*((np.log(x)))**(4)+f*((np.log(x)))**(5)
+
+def objective_3234(x, a, b, c, d, e, f, g):
+    return a+b*(np.log(x))+c*((np.log(x)))**(2)+d*((np.log(x)))**(3)+e*((np.log(x)))**(4)+f*((np.log(x)))**(5)+g*((np.log(x)))**(6)
+
+def objective_3235(x, a, b, c, d, e, f, g, h):
+    return a+b*(np.log(x))+c*((np.log(x)))**(2)+d*((np.log(x)))**(3)+e*((np.log(x)))**(4)+f*((np.log(x)))**(5)+g*((np.log(x)))**(6)+h*((np.log(x)))**(7)
+
+def objective_3236(x, a, b, c, d, e, f, g, h, i):
+    return a+b*(np.log(x))+c*((np.log(x)))**(2)+d*((np.log(x)))**(3)+e*((np.log(x)))**(4)+f*((np.log(x)))**(5)+g*((np.log(x)))**(6)+h*((np.log(x)))**(7)+i*((np.log(x)))**(8)
+
+def objective_3237(x, a, b, c, d, e, f, g, h, i, j):
+    return a+b*(np.log(x))+c*((np.log(x)))**(2)+d*((np.log(x)))**(3)+e*((np.log(x)))**(4)+f*((np.log(x)))**(5)+g*((np.log(x)))**(6)+h*((np.log(x)))**(7)+i*((np.log(x)))**(8)+j*((np.log(x)))**(9)
+
+def objective_3238(x, a, b, c, d, e, f, g, h, i, j, k):
+    return a+b*(np.log(x))+c*((np.log(x)))**(2)+d*((np.log(x)))**(3)+e*((np.log(x)))**(4)+f*((np.log(x)))**(5)+g*((np.log(x)))**(6)+h*((np.log(x)))**(7)+i*((np.log(x)))**(8)+j*((np.log(x)))**(9)+k*((np.log(x)))**(10)
+
+def objective_3239(x, a, b, c, d, e):
+    return a+b*(np.log(x))+c/(np.log(x))+d*((np.log(x)))**(2)+e/((np.log(x)))**(2)
+
+def objective_3240(x, a, b, c, d, e, f):
+    return a+b*(np.log(x))+c/(np.log(x))+d*((np.log(x)))**(2)+e/((np.log(x)))**(2)+f*((np.log(x)))**(3)
+
+def objective_3241(x, a, b, c, d, e, f, g):
+    return a+b*(np.log(x))+c/(np.log(x))+d*((np.log(x)))**(2)+e/((np.log(x)))**(2)+f*((np.log(x)))**(3)+g/((np.log(x)))**(3)
+
+def objective_3242(x, a, b, c, d, e, f, g, h):
+    return a+b*(np.log(x))+c/(np.log(x))+d*((np.log(x)))**(2)+e/((np.log(x)))**(2)+f*((np.log(x)))**(3)+g/((np.log(x)))**(3)+h*((np.log(x)))**(4)
+
+def objective_3243(x, a, b, c, d, e, f, g, h, i):
+    return a+b*(np.log(x))+c/(np.log(x))+d*((np.log(x)))**(2)+e/((np.log(x)))**(2)+f*((np.log(x)))**(3)+g/((np.log(x)))**(3)+h*((np.log(x)))**(4)+i/((np.log(x)))**(4)
+
+def objective_3244(x, a, b, c, d, e, f, g, h, i, j):
+    return a+b*(np.log(x))+c/(np.log(x))+d*((np.log(x)))**(2)+e/((np.log(x)))**(2)+f*((np.log(x)))**(3)+g/((np.log(x)))**(3)+h*((np.log(x)))**(4)+i/((np.log(x)))**(4)+j*((np.log(x)))**(5)
+
+def objective_3245(x, a, b, c, d, e, f, g, h, i, j, k):
+    return a+b*(np.log(x))+c/(np.log(x))+d*((np.log(x)))**(2)+e/((np.log(x)))**(2)+f*((np.log(x)))**(3)+g/((np.log(x)))**(3)+h*((np.log(x)))**(4)+i/((np.log(x)))**(4)+j*((np.log(x)))**(5)+k/((np.log(x)))**(5)
+
+def objective_3246(x, a, b, c, d):
+    return a+b/(x)+c/((x)**(2))+d/((x)**(3))
+
+def objective_3247(x, a, b, c, d, e):
+    return a+b/(x)+c/((x)**(2))+d/((x)**(3))+e/((x)**(4))
+
+def objective_3248(x, a, b, c, d, e, f):
+    return a+b/(x)+c/((x)**(2))+d/((x)**(3))+e/((x)**(4))+f/((x)**(5))
+
+def objective_3249(x, a, b, c, d, e, f, g):
+    return a+b/(x)+c/((x)**(2))+d/((x)**(3))+e/((x)**(4))+f/((x)**(5))+g/((x)**(6))
+
+def objective_3250(x, a, b, c, d, e, f, g, h):
+    return a+b/(x)+c/((x)**(2))+d/((x)**(3))+e/((x)**(4))+f/((x)**(5))+g/((x)**(6))+h/((x)**(7))
+
+def objective_3251(x, a, b, c, d, e, f, g, h, i):
+    return a+b/(x)+c/((x)**(2))+d/((x)**(3))+e/((x)**(4))+f/((x)**(5))+g/((x)**(6))+h/((x)**(7))+i/((x)**(8))
+
+def objective_3252(x, a, b, c, d, e, f, g, h, i, j):
+    return a+b/(x)+c/((x)**(2))+d/((x)**(3))+e/((x)**(4))+f/((x)**(5))+g/((x)**(6))+h/((x)**(7))+i/((x)**(8))+j/((x)**(9))
+
+def objective_3253(x, a, b, c, d, e, f, g, h, i, j, k):
+    return a+b/(x)+c/((x)**(2))+d/((x)**(3))+e/((x)**(4))+f/((x)**(5))+g/((x)**(6))+h/((x)**(7))+i/((x)**(8))+j/((x)**(9))+k/((x)**(10))
+
+def objective_3254(x, a, b, c):
+    return a+b/(np.log(x))+c/((np.log(x)))**(2)
+
+def objective_3255(x, a, b, c, d):
+    return a+b/(np.log(x))+c/((np.log(x)))**(2)+d/((np.log(x)))**(3)
+
+def objective_3256(x, a, b, c, d, e):
+    return a+b/(np.log(x))+c/((np.log(x)))**(2)+d/((np.log(x)))**(3)+e/((np.log(x)))**(4)
+
+def objective_3257(x, a, b, c, d, e, f):
+    return a+b/(np.log(x))+c/((np.log(x)))**(2)+d/((np.log(x)))**(3)+e/((np.log(x)))**(4)+f/((np.log(x)))**(5)
+
+def objective_3258(x, a, b, c, d, e, f, g):
+    return a+b/(np.log(x))+c/((np.log(x)))**(2)+d/((np.log(x)))**(3)+e/((np.log(x)))**(4)+f/((np.log(x)))**(5)+g/((np.log(x)))**(6)
+
+def objective_3259(x, a, b, c, d, e, f, g, h):
+    return a+b/(np.log(x))+c/((np.log(x)))**(2)+d/((np.log(x)))**(3)+e/((np.log(x)))**(4)+f/((np.log(x)))**(5)+g/((np.log(x)))**(6)+h/((np.log(x)))**(7)
+
+def objective_3260(x, a, b, c, d, e, f, g, h, i):
+    return a+b/(np.log(x))+c/((np.log(x)))**(2)+d/((np.log(x)))**(3)+e/((np.log(x)))**(4)+f/((np.log(x)))**(5)+g/((np.log(x)))**(6)+h/((np.log(x)))**(7)+i/((np.log(x)))**(8)
+
+def objective_3261(x, a, b, c, d, e, f, g, h, i, j):
+    return a+b/(np.log(x))+c/((np.log(x)))**(2)+d/((np.log(x)))**(3)+e/((np.log(x)))**(4)+f/((np.log(x)))**(5)+g/((np.log(x)))**(6)+h/((np.log(x)))**(7)+i/((np.log(x)))**(8)+j/((np.log(x)))**(9)
+
+def objective_3262(x, a, b, c, d, e, f, g, h, i, j, k):
+    return a+b/(np.log(x))+c/((np.log(x)))**(2)+d/((np.log(x)))**(3)+e/((np.log(x)))**(4)+f/((np.log(x)))**(5)+g/((np.log(x)))**(6)+h/((np.log(x)))**(7)+i/((np.log(x)))**(8)+j/((np.log(x)))**(9)+k/((np.log(x)))**(10)
+
+def objective_3263(x, a, b, c, d, e, f):
+    return a+b*(x)**(0.5)+c*(x)+d*(x)**(1.5)+e*((x)**(2))+f*(x)**(2.5)
+
+def objective_3264(x, a, b, c, d, e, f, g):
+    return a+b*(x)**(0.5)+c*(x)+d*(x)**(1.5)+e*((x)**(2))+f*(x)**(2.5)+g*((x)**(3))
+
+def objective_3265(x, a, b, c, d, e, f, g, h):
+    return a+b*(x)**(0.5)+c*(x)+d*(x)**(1.5)+e*((x)**(2))+f*(x)**(2.5)+g*((x)**(3))+h*(x)**(3.5)
+
+def objective_3266(x, a, b, c, d, e, f, g, h, i):
+    return a+b*(x)**(0.5)+c*(x)+d*(x)**(1.5)+e*((x)**(2))+f*(x)**(2.5)+g*((x)**(3))+h*(x)**(3.5)+i*((x)**(4))
+
+def objective_3267(x, a, b, c, d, e, f, g, h, i, j):
+    return a+b*(x)**(0.5)+c*(x)+d*(x)**(1.5)+e*((x)**(2))+f*(x)**(2.5)+g*((x)**(3))+h*(x)**(3.5)+i*((x)**(4))+j*(x)**(4.5)
+
+def objective_3268(x, a, b, c, d, e, f, g, h, i, j, k):
+    return a+b*(x)**(0.5)+c*(x)+d*(x)**(1.5)+e*((x)**(2))+f*(x)**(2.5)+g*((x)**(3))+h*(x)**(3.5)+i*((x)**(4))+j*(x)**(4.5)+k*((x)**(5))
+
+def objective_3269(x, a, b, c):
+    return a+b*((x)**(2))+c*((x)**(4))
+
+def objective_3270(x, a, b, c, d):
+    return a+b*((x)**(2))+c*((x)**(4))+d*((x)**(6))
+
+def objective_3271(x, a, b, c, d, e):
+    return a+b*((x)**(2))+c*((x)**(4))+d*((x)**(6))+e*((x)**(8))
+
+def objective_3272(x, a, b, c, d, e, f):
+    return a+b*((x)**(2))+c*((x)**(4))+d*((x)**(6))+e*((x)**(8))+f*((x)**(10))
+
+def objective_3273(x, a, b, c, d, e, f, g):
+    return a+b*((x)**(2))+c*((x)**(4))+d*((x)**(6))+e*((x)**(8))+f*((x)**(10))+g*((x)**(12))
+
+def objective_3274(x, a, b, c, d, e, f, g, h):
+    return a+b*((x)**(2))+c*((x)**(4))+d*((x)**(6))+e*((x)**(8))+f*((x)**(10))+g*((x)**(12))+h*((x)**(14))
+
+def objective_3275(x, a, b, c, d, e, f, g, h, i):
+    return a+b*((x)**(2))+c*((x)**(4))+d*((x)**(6))+e*((x)**(8))+f*((x)**(10))+g*((x)**(12))+h*((x)**(14))+i*((x)**(16))
+
+def objective_3276(x, a, b, c, d, e, f, g, h, i, j):
+    return a+b*((x)**(2))+c*((x)**(4))+d*((x)**(6))+e*((x)**(8))+f*((x)**(10))+g*((x)**(12))+h*((x)**(14))+i*((x)**(16))+j*((x)**(18))
+
+def objective_3277(x, a, b, c, d, e, f, g, h, i, j, k):
+    return a+b*((x)**(2))+c*((x)**(4))+d*((x)**(6))+e*((x)**(8))+f*((x)**(10))+g*((x)**(12))+h*((x)**(14))+i*((x)**(16))+j*((x)**(18))+k*((x)**(20))
+
+def objective_3278(x, a, c, b):
+    return (a+c*(x))/((1)+b*(x)) 
+
+def objective_3279(x, a, c, b, d):
+    return (a+c*(x))/((1)+b*(x)+d*((x)**(2)))
+
+def objective_3280(x, a, c, e, b, d):
+    return (a+c*(x)+e*((x)**(2)))/((1)+b*(x)+d*((x)**(2))) 
+
+def objective_3281(x, a, c, e, b, d, f):
+    return (a+c*(x)+e*((x)**(2)))/((1)+b*(x)+d*((x)**(2))+f*((x)**(3)))
+
+def objective_3282(x, a, c, e, g, b, d, f):
+    return (a+c*(x)+e*((x)**(2))+g*((x)**(3)))/((1)+b*(x)+d*((x)**(2))+f*((x)**(3)))
+
+def objective_3283(x, a, c, e, g, b, d, f, h):
+    return (a+c*(x)+e*((x)**(2))+g*((x)**(3)))/((1)+b*(x)+d*((x)**(2))+f*((x)**(3))+h*((x)**(4))) 
+
+def objective_3284(x, a, c, e, g, i, b, d, f, h):
+    return (a+c*(x)+e*((x)**(2))+g*((x)**(3))+i*((x)**(4)))/((1)+b*(x)+d*((x)**(2))+f*((x)**(3))+h*((x)**(4))) 
+
+def objective_3285(x, a, c, e, g, i, b, d, f, h, j):
+    return (a+c*(x)+e*((x)**(2))+g*((x)**(3))+i*((x)**(4)))/((1)+b*(x)+d*((x)**(2))+f*((x)**(3))+h*((x)**(4))+j*((x)**(5))) 
+
+def objective_3286(x, a, c, e, g, i, k, b, d, f, h, j):
+    return (a+c*(x)+e*((x)**(2))+g*((x)**(3))+i*((x)**(4))+k*((x)**(5)))/((1)+b*(x)+d*((x)**(2))+f*((x)**(3))+h*((x)**(4))+j*((x)**(5))) 
+
+def objective_3287(x, a, c, e, g, b, d, f, h):
+    return (a+c*((x)**(2))+e*((x)**(4))+g*((x)**(6)))/((1)+b*((x)**(2))+d*((x)**(4))+f*((x)**(6))+h*((x)**(8))) 
