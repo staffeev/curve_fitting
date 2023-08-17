@@ -3210,3 +3210,259 @@ y=a+bx+cx^2+dx^3+ex^4+fx^5+gx^6+hx^7
 y=a+bx+cx^2+dx^3+ex^4+fx^5+gx^6+hx^7+ix^8
 y=a+bx+cx^2+dx^3+ex^4+fx^5+gx^6+hx^7+ix^8+jx^9
 y=a+bx+cx^2+dx^3+ex^4+fx^5+gx^6+hx^7+ix^8+jx^9+kx^(10)
+High Precision Polynomial Order 4
+High Precision Polynomial Order 5
+High Precision Polynomial Order 6
+High Precision Polynomial Order 7
+High Precision Polynomial Order 8
+High Precision Polynomial Order 9
+High Precision Polynomial Order 10
+High Precision Polynomial Order 11
+High Precision Polynomial Order 12
+High Precision Polynomial Order 13
+High Precision Polynomial Order 14
+High Precision Polynomial Order 15
+High Precision Polynomial Order 16
+High Precision Polynomial Order 17
+High Precision Polynomial Order 18
+High Precision Polynomial Order 19
+High Precision Polynomial Order 20
+lny=a+bx+cx^2+dx^3
+lny=a+bx+cx^2+dx^3+ex^4
+lny=a+bx+cx^2+dx^3+ex^4+fx^5
+y^(-1)=a+bx+cx^2+dx^3
+y^(-1)=a+bx+cx^2+dx^3+ex^4
+y^(-1)=a+bx+cx^2+dx^3+ex^4+fx^5
+y^(0.5)=a+bx+cx^2
+y^(0.5)=a+bx+cx^2+dx^3
+y^(0.5)=a+bx+cx^2+dx^3+ex^4
+y^(0.5)=a+bx+cx^2+dx^3+ex^4+fx^5
+y^2=a+bx+cx^2
+y^2=a+bx+cx^2+dx^3
+y^2=a+bx+cx^2+dx^3+ex^4
+y=a+bx+c/x+dx^2+e/x^2+fx^3
+y=a+bx+c/x+dx^2+e/x^2+fx^3+g/x^3
+y=a+bx+c/x+dx^2+e/x^2+fx^3+g/x^3+hx^4
+y=a+bx+c/x+dx^2+e/x^2+fx^3+g/x^3+hx^4+i/x^4
+y=a+bx+c/x+dx^2+e/x^2+fx^3+g/x^3+hx^4+i/x^4+jx^5
+y=a+bx+c/x+dx^2+e/x^2+fx^3+g/x^3+hx^4+i/x^4+jx^5+k/x^5
+y=a+blnx+c(lnx)^2+d(lnx)^3
+y=a+blnx+c(lnx)^2+d(lnx)^3+e(lnx)^4
+y=a+blnx+c(lnx)^2+d(lnx)^3+e(lnx)^4+f(lnx)^5
+y=a+blnx+c(lnx)^2+d(lnx)^3+e(lnx)^4+f(lnx)^5+g(lnx)^6
+y=a+blnx+c(lnx)^2+d(lnx)^3+e(lnx)^4+f(lnx)^5+g(lnx)^6+h(lnx)^7
+y=a+blnx+c(lnx)^2+d(lnx)^3+e(lnx)^4+f(lnx)^5+g(lnx)^6+h(lnx)^7+i(lnx)^8
+y=a+blnx+c(lnx)^2+d(lnx)^3+e(lnx)^4+f(lnx)^5+g(lnx)^6+h(lnx)^7+i(lnx)^8+j(lnx)^9
+y=a+blnx+c(lnx)^2+d(lnx)^3+e(lnx)^4+f(lnx)^5+g(lnx)^6+h(lnx)^7+i(lnx)^8+j(lnx)^9+k(lnx)^(10)
+y=a+blnx+c/lnx+d(lnx)^2+e/(lnx)^2
+y=a+blnx+c/lnx+d(lnx)^2+e/(lnx)^2+f(lnx)^3
+y=a+blnx+c/lnx+d(lnx)^2+e/(lnx)^2+f(lnx)^3+g/(lnx)^3
+y=a+blnx+c/lnx+d(lnx)^2+e/(lnx)^2+f(lnx)^3+g/(lnx)^3+h(lnx)^4
+y=a+blnx+c/lnx+d(lnx)^2+e/(lnx)^2+f(lnx)^3+g/(lnx)^3+h(lnx)^4+i/(lnx)^4
+y=a+blnx+c/lnx+d(lnx)^2+e/(lnx)^2+f(lnx)^3+g/(lnx)^3+h(lnx)^4+i/(lnx)^4+j(lnx)^5
+y=a+blnx+c/lnx+d(lnx)^2+e/(lnx)^2+f(lnx)^3+g/(lnx)^3+h(lnx)^4+i/(lnx)^4+j(lnx)^5+k/(lnx)^5
+y=a+b/x+c/x^2+d/x^3
+y=a+b/x+c/x^2+d/x^3+e/x^4
+y=a+b/x+c/x^2+d/x^3+e/x^4+f/x^5
+y=a+b/x+c/x^2+d/x^3+e/x^4+f/x^5+g/x^6
+y=a+b/x+c/x^2+d/x^3+e/x^4+f/x^5+g/x^6+h/x^7
+y=a+b/x+c/x^2+d/x^3+e/x^4+f/x^5+g/x^6+h/x^7+i/x^8
+y=a+b/x+c/x^2+d/x^3+e/x^4+f/x^5+g/x^6+h/x^7+i/x^8+j/x^9
+y=a+b/x+c/x^2+d/x^3+e/x^4+f/x^5+g/x^6+h/x^7+i/x^8+j/x^9+k/x^(10)
+y=a+b/lnx+c/(lnx)^2
+y=a+b/lnx+c/(lnx)^2+d/(lnx)^3
+y=a+b/lnx+c/(lnx)^2+d/(lnx)^3+e/(lnx)^4
+y=a+b/lnx+c/(lnx)^2+d/(lnx)^3+e/(lnx)^4+f/(lnx)^5
+y=a+b/lnx+c/(lnx)^2+d/(lnx)^3+e/(lnx)^4+f/(lnx)^5+g/(lnx)^6
+y=a+b/lnx+c/(lnx)^2+d/(lnx)^3+e/(lnx)^4+f/(lnx)^5+g/(lnx)^6+h/(lnx)^7
+y=a+b/lnx+c/(lnx)^2+d/(lnx)^3+e/(lnx)^4+f/(lnx)^5+g/(lnx)^6+h/(lnx)^7+i/(lnx)^8
+y=a+b/lnx+c/(lnx)^2+d/(lnx)^3+e/(lnx)^4+f/(lnx)^5+g/(lnx)^6+h/(lnx)^7+i/(lnx)^8+j/(lnx)^9
+y=a+b/lnx+c/(lnx)^2+d/(lnx)^3+e/(lnx)^4+f/(lnx)^5+g/(lnx)^6+h/(lnx)^7+i/(lnx)^8+j/(lnx)^9+k/(lnx)^(10)
+y=a+bx^(0.5)+cx+dx^(1.5)+ex^2+fx^(2.5)
+y=a+bx^(0.5)+cx+dx^(1.5)+ex^2+fx^(2.5)+gx^3
+y=a+bx^(0.5)+cx+dx^(1.5)+ex^2+fx^(2.5)+gx^3+hx^(3.5)
+y=a+bx^(0.5)+cx+dx^(1.5)+ex^2+fx^(2.5)+gx^3+hx^(3.5)+ix^4
+y=a+bx^(0.5)+cx+dx^(1.5)+ex^2+fx^(2.5)+gx^3+hx^(3.5)+ix^4+jx^(4.5)
+y=a+bx^(0.5)+cx+dx^(1.5)+ex^2+fx^(2.5)+gx^3+hx^(3.5)+ix^4+jx^(4.5)+kx^5
+y=a+bx^2+cx^4
+y=a+bx^2+cx^4+dx^6
+y=a+bx^2+cx^4+dx^6+ex^8
+y=a+bx^2+cx^4+dx^6+ex^8+fx^(10)
+y=a+bx^2+cx^4+dx^6+ex^8+fx^(10)+gx^(12)
+y=a+bx^2+cx^4+dx^6+ex^8+fx^(10)+gx^(12)+hx^(14)
+y=a+bx^2+cx^4+dx^6+ex^8+fx^(10)+gx^(12)+hx^(14)+ix^(16)
+y=a+bx^2+cx^4+dx^6+ex^8+fx^(10)+gx^(12)+hx^(14)+ix^(16)+jx^(18)
+y=a+bx^2+cx^4+dx^6+ex^8+fx^(10)+gx^(12)+hx^(14)+ix^(16)+jx^(18)+kx^(20)
+Chebyshev Polynomial Order 3
+Chebyshev Polynomial Order 4
+Chebyshev Polynomial Order 5
+Chebyshev Polynomial Order 6
+Chebyshev Polynomial Order 7
+Chebyshev Polynomial Order 8
+Chebyshev Polynomial Order 9
+Chebyshev Polynomial Order 10
+Chebyshev Polynomial Order 11
+Chebyshev Polynomial Order 12
+Chebyshev Polynomial Order 13
+Chebyshev Polynomial Order 14
+Chebyshev Polynomial Order 15
+Chebyshev Polynomial Order 16
+Chebyshev Polynomial Order 17
+Chebyshev Polynomial Order 18
+Chebyshev Polynomial Order 19
+Chebyshev Polynomial Order 20
+Fourier Series Polynomial 1x2
+Fourier Series Polynomial 2x2
+Fourier Series Polynomial 3x2
+Fourier Series Polynomial 4x2
+Fourier Series Polynomial 5x2
+Fourier Series Polynomial 6x2
+Fourier Series Polynomial 7x2
+Fourier Series Polynomial 8x2
+Fourier Series Polynomial 9x2
+Fourier Series Polynomial 10x2
+Chebyshev=>Std Polynomial Order 3
+Chebyshev=>Std Polynomial Order 4
+Chebyshev=>Std Polynomial Order 5
+Chebyshev=>Std Polynomial Order 6
+Chebyshev=>Std Polynomial Order 7
+Chebyshev=>Std Polynomial Order 8
+Chebyshev=>Std Polynomial Order 9
+Chebyshev=>Std Polynomial Order 10
+Chebyshev=>Std Polynomial Order 11
+Chebyshev=>Std Polynomial Order 12
+Chebyshev=>Std Polynomial Order 13
+Chebyshev=>Std Polynomial Order 14
+Chebyshev=>Std Polynomial Order 15
+Chebyshev=>Std Polynomial Order 16
+Chebyshev Rational Order 2/2
+Chebyshev=>Std Rational Order 2/2
+y=(a+cx)/(1+bx) [NL]
+y=(a+cx)/(1+bx+dx^2) [NL]
+y=(a+cx+ex^2)/(1+bx+dx^2) [NL]
+y=(a+cx+ex^2)/(1+bx+dx^2+fx^3) [NL]
+y=(a+cx+ex^2+gx^3)/(1+bx+dx^2+fx^3) [NL]
+y=(a+cx+ex^2+gx^3)/(1+bx+dx^2+fx^3+hx^4) [NL]
+y=(a+cx+ex^2+gx^3+ix^4)/(1+bx+dx^2+fx^3+hx^4) [NL]
+y=(a+cx+ex^2+gx^3+ix^4)/(1+bx+dx^2+fx^3+hx^4+jx^5) [NL]
+y=(a+cx+ex^2+gx^3+ix^4+kx^5)/(1+bx+dx^2+fx^3+hx^4+jx^5) [NL]
+y=(a+cx^2+ex^4+gx^6)/(1+bx^2+dx^4+fx^6+hx^8) [NL]
+Gaussian(a,b,c,d)
+Lorentzian(a,b,c,d)
+LogNormal(a,b,c,d)
+ExtrVal(a,b,c,d)
+Logistic(a,b,c,d)
+ErfcPeak(a,b,c,d)
+Power(a,b,c)
+Sigmoid(a,b,c,d)
+GaussCum(a,b,c,d)
+LgstcDoseRsp(a,b,c,d)
+SineWave(a,b,c,d)
+SineSquared(a,b,c,d)
+Gaussian_(a,b,c)
+Lorentzian_(a,b,c)
+LogNormal_(a,b,c)
+ExtrVal_(a,b,c)
+Logistic_(a,b,c)
+ErfcPeak_(a,b,c)
+Pulse_(a,b,c)
+Pulse(a,b,c,d)
+GaussMod_(a,b,c,d)
+GaussMod(a,b,c,d,e)
+LDR Peak_(a,b,c)
+LDR Peak(a,b,c,d)
+AsymLgstc(a,b,c,d,e)
+Pearson VII(a,b,c,d,e)
+SDS_(a,b,c,d)
+SDS(a,b,c,d,e)
+SDC_(a,b,c,d)
+SDC(a,b,c,d,e)
+Gamma(a,b,c,d,e)
+Weibull_(a,b,c,d)
+Weibull(a,b,c,d,e)
+Beta(a,b,c,d,e,f)
+ADS(a,b,c,d,e,f)
+ADC(a,b,c,d,e,f)
+EmaxPowPk_(a,b,c)
+EmaxPowPk(a,b,c,d)
+LgstcPowPk_(a,b,c,d)
+LgstcPowPk(a,b,c,d,e)
+PulseWid2_(a,b,c,d)
+PulseWid2(a,b,c,d,e)
+IntermedPk_(a,b,c,d)
+EquilPk(a,b,c,d,e,f)
+GaussLorXP_(a,b,c,d)
+GaussLorXP(a,b,c,d,e)
+Sigmoid_(a,b,c)
+GaussCum_(a,b,c)
+LgstcDoseRsp_(a,b,c)
+LorCum_(a,b,c)
+LorCum(a,b,c,d)
+LogNormCum_(a,b,c)
+LogNormCum(a,b,c,d)
+ExtrValCum(a,b,c,d)
+PulseCum(a,b,c,d)
+PulsePwCum(a,b,c,d,e)
+WeibullCum(a,b,c,d,e)
+AsymSig(a,b,c,d,e)
+AsymSigR(a,b,c,d,e)
+SDSCum_(a,b,c,d)
+SDSCum(a,b,c,d,e)
+Decay1_(a,b)
+Decay1(a,b,c)
+Decay2_(a,b)
+Decay2(a,b,c)
+Decay2Hyp_(a,b)
+Decay2Hyp(a,b,c)
+Decay3_(a,b)
+Decay3(a,b,c)
+Decay.5_(a,b)
+Decay.5(a,b,c)
+DecayN_(a,b,c)
+DecayN(a,b,c,d)
+Decay1,2_(a,b,c)
+Decay1,2(a,b,c,d)
+Form1,2_(a,b,c)
+Equil1 A+B=C+D(a,b,c)
+Intermed11_ b>c(a,b,c)
+Intermed11 c>d(a,b,c,d)
+Equil111_ b>c(a,b,c,d)
+FormSeq11(a,b,c,d)
+Decay2,1_ a<b(a,b,c)
+Decay2,1 b<c(a,b,c,d)
+Decay2,1_ a>b(a,b,c)
+Decay2,1 b>c(a,b,c,d)
+Equil1R(a,b,c)
+Equil1E(a,b,c)
+Decay1+1_(a,b,c,d)
+Decay1+1(a,b,c,d,e)
+Decay2+2_(a,b,c,d)
+Decay2+2(a,b,c,d,e)
+Power_(a,b)
+SineWave_(a,b,c)
+SineSquared(a,b,c)
+Line(a,b) Robust None
+Line(a,b) Robust Low
+Line(a,b) Robust Medium
+Line(a,b) Robust High
+EMG_(a,b,c,d)
+EMG(a,b,c,d,e)
+GMG_(a,b,c,d)
+GMG(a,b,c,d,e)
+Laplace(a,b,c,d)
+Error_(a,b,c,d)
+Error(a,b,c,d,e)
+Student_(a,b,c,d)
+LogNorm4_(a,b,c,d)
+LogNorm4(a,b,c,d,e)
+ExtrVal4T_(a,b,c,d)
+ExtrVal4T(a,b,c,d,e)
+ExtrVal4F_(a,b,c,d)
+ExtrVal4F(a,b,c,d,e)
+InvGamma_(a,b,c,d)
+InvGamma(a,b,c,d,e)
+ChiSq_(a,b,c,d)
+ChiSq(a,b,c,d,e)
+FVar_(a,b,c,d,e)
+Pearson IV(a,b,c,d,e,f)
+EMGCum(a,b,c,d,e)

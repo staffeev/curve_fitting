@@ -1,31 +1,67 @@
 from re import findall, sub
+import os
+os.remove("objective.py")
+os.remove("objective_square.py")
 
-res = set()
-f = list(map(str.strip, open("formulas3.txt").readlines()))
+replace_exp = r"(\g<0>)"
+coef_replace_exp = r"\g<0>*"
+
+FUNCTION_PATTERN = """
+def objective_{}(x, {}):
+    return {}
+"""
+
+RULES = {
+    r"-?[x-y]": replace_exp,  # переменная
+    r"-?(?<![\d.])[0-9](?![\d.])": replace_exp,  # целое число
+    r"e\^": r"(np.e)^",  # е в степени
+    r"\([ex-y]\)\^\(+-?\w+\)+": replace_exp,  # переменная в числовой степени или e^x или e^-x
+    r"ln\(\w+\)": replace_exp,  # натуральный логарифм
+    r"[+-=*/^][a-z]\(": coef_replace_exp,  # коэффициент в уравнении
+    r"\(\*": r"*(",  # изменение (* на *(
+    r"ln": r"np.log", # натуральный логарифм заменяется на log, чтобы numpy мог посчитать
+    r"\)\(": r")*(", # умножение после степени
+    r"\^": r"**"  # знак степени
+}
+
+
+def parse_formula(s):
+    for exp, repl_exp in RULES.items():
+        s = sub(exp, repl_exp, s)
+    return s, list(map(lambda x: x[0], findall(r"[a-z][+*/]", s)))
+
+f = list(map(str.strip, open("test_data.txt").readlines()))
+file = open("objective.py", "a", encoding="utf-8")
+file2 = open("objective_square.py", "a", encoding="utf-8")
+func_with_square = []
+
+file.write("import numpy as np\n")
+file2.write("import numpy as np\n")
+x = 0
 for i in f:
-    var_exp = r"[x-yX-Y]"
-    int_exp = r"(?<![\d.])[0-9](?![\d.])"  # натуральные числа до 9 включительно
-    #ln_exp = r"ln\w+"  # натуральные логарифмы
-    var_pow_exp = r"\([x-yX-Y]\)\^\(\w+\)"  # переменная в числовой степени
-    replace_exp = r"(\g<0>)"  # на что заменить
-    ln_replace_exp = r"log(\g<0>)"
+    s, letters = parse_formula(i)
+    try:
+        v1, v2 = s.split("=")
+        if v1 == "(y)":
+            file.write(FUNCTION_PATTERN.format(x, ', '.join(letters), v2))
+            x += 1
+        elif v1 == "(np.log(y))":
+            file.write(FUNCTION_PATTERN.format(x, ", ".join(letters), f"np.e ** ({v2})"))
+            x += 1
+        elif v1 == "(y)**(0.5)":
+            file.write(FUNCTION_PATTERN.format(x, ", ".join(letters), f"({v2}) ** 2"))
+            x += 1
+        elif v1 == "((y)**(2))":
+            file2.write(FUNCTION_PATTERN.format(x, ", ".join(letters), v2))
+            file2.write(FUNCTION_PATTERN.format(f"{x}_sqrt", ", ".join(letters), f"np.sqrt({v2})"))
+            x += 1
+        elif v1 == "((y)**((-1)))":
+            file.write(FUNCTION_PATTERN.format(x, ", ".join(letters), f"({v2}) ** (-1)"))
+            x += 1
+        else:
+            print(v1)
+    except:
+        pass
 
-
-    s = sub(var_exp, replace_exp, i)
-    s = sub(int_exp, replace_exp, s)
-    s = sub(var_pow_exp, replace_exp, s)
-
-
-
-    # if findall(int_exp, i):
-    #     s = sub(int_exp, replace_exp, i)
-    #     if not findall(var_pow_exp, s):
-    #         continue
-    #     print(i)
-    #     print(sub(var_pow_exp, replace_exp, s))
-    #     print()
-
-
-    blocks = set(findall(r"\^\w+", i))
-    res = res.union(blocks)
-print(sorted(res, key=lambda x: (len(x), x)))
+file.close()
+file2.close()
