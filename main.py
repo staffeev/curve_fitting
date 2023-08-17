@@ -8,7 +8,7 @@ import multiprocessing as mp
 from matplotlib import pyplot
 from sklearn.metrics import max_error
 from inspect import signature
-import objective
+from objective import all_objectives
 import objective_square
 from tqdm import tqdm
 from csv import writer
@@ -35,14 +35,14 @@ if __name__ == "__main__":
     y_square = y ** 2
     pool = mp.Pool(mp.cpu_count())
     start = time.time()
-    names = [i for i in dir(objective) if i.startswith("objective_")]
-    results = [pool.apply_async(curve_fit, args=(eval(f"objective.{f}"), x, y), kwds={"maxfev": 10000}) for f in names]
+    # names = [i for i in dir(objective) if i.startswith("objective_")]
+    results = [pool.apply_async(curve_fit, args=(obj, x, y), kwds={"maxfev": 10000}) for obj in all_objectives]
     names2 = [i for i in dir(objective_square) if i.startswith("objective_") and not i.endswith("_sqrt")]
     results2 = [pool.apply_async(curve_fit, args=(eval(f"objective_square.{f}"), x, y_square), kwds={"maxfev": 10000}) for f in names2]
 
-    functions = [eval(f"objective.{f}") for f in names] + [eval(f"objective_square.{f}_sqrt") for f in names2]
+    # functions = [eval(f"objective.{f}") for f in names] + [eval(f"objective_square.{f}_sqrt") for f in names2]
     results = [i.get()[0] for i in results] + [i.get()[0] for i in results2]
-    metrics = [pool.apply_async(metrics_calc, args=(x, y, f(x, *popt), f)) for f, popt in zip(functions, results)]
+    metrics = [pool.apply_async(metrics_calc, args=(x, y, f(x, *popt), f)) for f, popt in zip(all_objectives, results)]
     pool.close()
 
     res = [i.get() for i in metrics]
