@@ -39,14 +39,14 @@ file.write("import numpy as np\n")
 file2.write("import numpy as np\n")
 x = 0
 for i in f:
-    s, letters = parse_formula(i)
+    s, letters = parse_formula(i.strip("[NL]"))
     try:
         v1, v2 = s.split("=")
         if v1 == "(y)":
             file.write(FUNCTION_PATTERN.format(x, ', '.join(letters), v2))
             x += 1
         elif v1 == "(np.log(y))":
-            file.write(FUNCTION_PATTERN.format(x, ", ".join(letters), f"np.e ** ({v2})"))
+            file.write(FUNCTION_PATTERN.format(x, ", ".join(letters), f"np.exp({v2})"))
             x += 1
         elif v1 == "(y)**(0.5)":
             file.write(FUNCTION_PATTERN.format(x, ", ".join(letters), f"({v2}) ** 2"))

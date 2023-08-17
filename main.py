@@ -31,7 +31,7 @@ def metrics_calc(xdata, ydata, y_predicted, func):
 
 if __name__ == "__main__":
     dataframe = read_excel("points.xls", dtype=np.float64)
-    x, y = dataframe["X"], dataframe["Y"]
+    x, y = dataframe["X"].to_numpy(), dataframe["Y"].to_numpy()
     y_square = y ** 2
     pool = mp.Pool(mp.cpu_count())
     start = time.time()
@@ -43,7 +43,6 @@ if __name__ == "__main__":
     functions = [eval(f"objective.{f}") for f in names] + [eval(f"objective_square.{f}_sqrt") for f in names2]
     results = [i.get()[0] for i in results] + [i.get()[0] for i in results2]
     metrics = [pool.apply_async(metrics_calc, args=(x, y, f(x, *popt), f)) for f, popt in zip(functions, results)]
-    pool.close()
 
     res = [i.get() for i in metrics]
 

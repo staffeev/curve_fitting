@@ -64,67 +64,67 @@ def objective_20(x, a, b):
     return a+b*(np.e)**((-x))
 
 def objective_21(x, a, b):
-    return np.e ** (a+b*(x))
+    return np.exp(a+b*(x))
 
 def objective_22(x, a, b):
-    return np.e ** (a+b*(x)*(np.log(x)))
+    return np.exp(a+b*(x)*(np.log(x)))
 
 def objective_23(x, a, b):
-    return np.e ** (a+b*(x)**(1.5))
+    return np.exp(a+b*(x)**(1.5))
 
 def objective_24(x, a, b):
-    return np.e ** (a+b*((x)**(2)))
+    return np.exp(a+b*((x)**(2)))
 
 def objective_25(x, a, b):
-    return np.e ** (a+b*((x)**(2))*(np.log(x)))
+    return np.exp(a+b*((x)**(2))*(np.log(x)))
 
 def objective_26(x, a, b):
-    return np.e ** (a+b*(x)**(2.5))
+    return np.exp(a+b*(x)**(2.5))
 
 def objective_27(x, a, b):
-    return np.e ** (a+b*((x)**(3)))
+    return np.exp(a+b*((x)**(3)))
 
 def objective_28(x, a, b):
-    return np.e ** (a+b*(np.e)**(x))
+    return np.exp(a+b*(np.e)**(x))
 
 def objective_29(x, a, b):
-    return np.e ** (a+b*(x)**(0.5)*(np.log(x)))
+    return np.exp(a+b*(x)**(0.5)*(np.log(x)))
 
 def objective_30(x, a, b):
-    return np.e ** (a+b*((np.log(x)))**(2))
+    return np.exp(a+b*((np.log(x)))**(2))
 
 def objective_31(x, a, b):
-    return np.e ** (a+b*(x)/(np.log(x)))
+    return np.exp(a+b*(x)/(np.log(x)))
 
 def objective_32(x, a, b):
-    return np.e ** (a+b*(x)**(0.5))
+    return np.exp(a+b*(x)**(0.5))
 
 def objective_33(x, a, b):
-    return np.e ** (a+b*(np.log(x)))
+    return np.exp(a+b*(np.log(x)))
 
 def objective_34(x, a, b):
-    return np.e ** (a+b/(np.log(x)))
+    return np.exp(a+b/(np.log(x)))
 
 def objective_35(x, a, b):
-    return np.e ** (a+b/(x)**(0.5))
+    return np.exp(a+b/(x)**(0.5))
 
 def objective_36(x, a, b):
-    return np.e ** (a+b*(np.log(x))/(x))
+    return np.exp(a+b*(np.log(x))/(x))
 
 def objective_37(x, a, b):
-    return np.e ** (a+b/(x))
+    return np.exp(a+b/(x))
 
 def objective_38(x, a, b):
-    return np.e ** (a+b/(x)**(1.5))
+    return np.exp(a+b/(x)**(1.5))
 
 def objective_39(x, a, b):
-    return np.e ** (a+b*(np.log(x))/((x)**(2)))
+    return np.exp(a+b*(np.log(x))/((x)**(2)))
 
 def objective_40(x, a, b):
-    return np.e ** (a+b/((x)**(2)))
+    return np.exp(a+b/((x)**(2)))
 
 def objective_41(x, a, b):
-    return np.e ** (a+b*(np.e)**((-x)))
+    return np.exp(a+b*(np.e)**((-x)))
 
 def objective_42(x, a, b):
     return (a+b*(x)) ** (-1)
@@ -883,634 +883,634 @@ def objective_314(x, a, b, c):
     return a+b/((x)**(2))+c*(np.e)**((-x))
 
 def objective_315(x, a, b, c):
-    return np.e ** (a+b*(x)+c*(x)*(np.log(x)))
+    return np.exp(a+b*(x)+c*(x)*(np.log(x)))
 
 def objective_316(x, a, b, c):
-    return np.e ** (a+b*(x)+c*(x)**(1.5))
+    return np.exp(a+b*(x)+c*(x)**(1.5))
 
 def objective_317(x, a, b, c):
-    return np.e ** (a+b*(x)+c*((x)**(2)))
+    return np.exp(a+b*(x)+c*((x)**(2)))
 
 def objective_318(x, a, b, c):
-    return np.e ** (a+b*(x)+c*((x)**(2))*(np.log(x)))
+    return np.exp(a+b*(x)+c*((x)**(2))*(np.log(x)))
 
 def objective_319(x, a, b, c):
-    return np.e ** (a+b*(x)+c*(x)**(2.5))
+    return np.exp(a+b*(x)+c*(x)**(2.5))
 
 def objective_320(x, a, b, c):
-    return np.e ** (a+b*(x)+c*((x)**(3)))
+    return np.exp(a+b*(x)+c*((x)**(3)))
 
 def objective_321(x, a, b, c):
-    return np.e ** (a+b*(x)+c*(np.e)**(x))
+    return np.exp(a+b*(x)+c*(np.e)**(x))
 
 def objective_322(x, a, b, c):
-    return np.e ** (a+b*(x)+c*(x)**(0.5)*(np.log(x)))
+    return np.exp(a+b*(x)+c*(x)**(0.5)*(np.log(x)))
 
 def objective_323(x, a, b, c):
-    return np.e ** (a+b*(x)+c*((np.log(x)))**(2))
+    return np.exp(a+b*(x)+c*((np.log(x)))**(2))
 
 def objective_324(x, a, b, c):
-    return np.e ** (a+b*(x)+c*(x)/(np.log(x)))
+    return np.exp(a+b*(x)+c*(x)/(np.log(x)))
 
 def objective_325(x, a, b, c):
-    return np.e ** (a+b*(x)+c*(x)**(0.5))
+    return np.exp(a+b*(x)+c*(x)**(0.5))
 
 def objective_326(x, a, b, c):
-    return np.e ** (a+b*(x)+c*(np.log(x)))
+    return np.exp(a+b*(x)+c*(np.log(x)))
 
 def objective_327(x, a, b, c):
-    return np.e ** (a+b*(x)+c/(np.log(x)))
+    return np.exp(a+b*(x)+c/(np.log(x)))
 
 def objective_328(x, a, b, c):
-    return np.e ** (a+b*(x)+c/(x)**(0.5))
+    return np.exp(a+b*(x)+c/(x)**(0.5))
 
 def objective_329(x, a, b, c):
-    return np.e ** (a+b*(x)+c*(np.log(x))/(x))
+    return np.exp(a+b*(x)+c*(np.log(x))/(x))
 
 def objective_330(x, a, b, c):
-    return np.e ** (a+b*(x)+c/(x))
+    return np.exp(a+b*(x)+c/(x))
 
 def objective_331(x, a, b, c):
-    return np.e ** (a+b*(x)+c/(x)**(1.5))
+    return np.exp(a+b*(x)+c/(x)**(1.5))
 
 def objective_332(x, a, b, c):
-    return np.e ** (a+b*(x)+c*(np.log(x))/((x)**(2)))
+    return np.exp(a+b*(x)+c*(np.log(x))/((x)**(2)))
 
 def objective_333(x, a, b, c):
-    return np.e ** (a+b*(x)+c/((x)**(2)))
+    return np.exp(a+b*(x)+c/((x)**(2)))
 
 def objective_334(x, a, b, c):
-    return np.e ** (a+b*(x)+c*(np.e)**((-x)))
+    return np.exp(a+b*(x)+c*(np.e)**((-x)))
 
 def objective_335(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c*(x)**(1.5))
+    return np.exp(a+b*(x)*(np.log(x))+c*(x)**(1.5))
 
 def objective_336(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c*((x)**(2)))
+    return np.exp(a+b*(x)*(np.log(x))+c*((x)**(2)))
 
 def objective_337(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c*((x)**(2))*(np.log(x)))
+    return np.exp(a+b*(x)*(np.log(x))+c*((x)**(2))*(np.log(x)))
 
 def objective_338(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c*(x)**(2.5))
+    return np.exp(a+b*(x)*(np.log(x))+c*(x)**(2.5))
 
 def objective_339(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c*((x)**(3)))
+    return np.exp(a+b*(x)*(np.log(x))+c*((x)**(3)))
 
 def objective_340(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c*(np.e)**(x))
+    return np.exp(a+b*(x)*(np.log(x))+c*(np.e)**(x))
 
 def objective_341(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c*(x)**(0.5)*(np.log(x)))
+    return np.exp(a+b*(x)*(np.log(x))+c*(x)**(0.5)*(np.log(x)))
 
 def objective_342(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c*((np.log(x)))**(2))
+    return np.exp(a+b*(x)*(np.log(x))+c*((np.log(x)))**(2))
 
 def objective_343(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c*(x)/(np.log(x)))
+    return np.exp(a+b*(x)*(np.log(x))+c*(x)/(np.log(x)))
 
 def objective_344(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c*(x)**(0.5))
+    return np.exp(a+b*(x)*(np.log(x))+c*(x)**(0.5))
 
 def objective_345(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c*(np.log(x)))
+    return np.exp(a+b*(x)*(np.log(x))+c*(np.log(x)))
 
 def objective_346(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c/(np.log(x)))
+    return np.exp(a+b*(x)*(np.log(x))+c/(np.log(x)))
 
 def objective_347(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c/(x)**(0.5))
+    return np.exp(a+b*(x)*(np.log(x))+c/(x)**(0.5))
 
 def objective_348(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c*(np.log(x))/(x))
+    return np.exp(a+b*(x)*(np.log(x))+c*(np.log(x))/(x))
 
 def objective_349(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c/(x))
+    return np.exp(a+b*(x)*(np.log(x))+c/(x))
 
 def objective_350(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c/(x)**(1.5))
+    return np.exp(a+b*(x)*(np.log(x))+c/(x)**(1.5))
 
 def objective_351(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c*(np.log(x))/((x)**(2)))
+    return np.exp(a+b*(x)*(np.log(x))+c*(np.log(x))/((x)**(2)))
 
 def objective_352(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c/((x)**(2)))
+    return np.exp(a+b*(x)*(np.log(x))+c/((x)**(2)))
 
 def objective_353(x, a, b, c):
-    return np.e ** (a+b*(x)*(np.log(x))+c*(np.e)**((-x)))
+    return np.exp(a+b*(x)*(np.log(x))+c*(np.e)**((-x)))
 
 def objective_354(x, a, b, c):
-    return np.e ** (a+b*(x)**(1.5)+c*((x)**(2)))
+    return np.exp(a+b*(x)**(1.5)+c*((x)**(2)))
 
 def objective_355(x, a, b, c):
-    return np.e ** (a+b*(x)**(1.5)+c*((x)**(2))*(np.log(x)))
+    return np.exp(a+b*(x)**(1.5)+c*((x)**(2))*(np.log(x)))
 
 def objective_356(x, a, b, c):
-    return np.e ** (a+b*(x)**(1.5)+c*(x)**(2.5))
+    return np.exp(a+b*(x)**(1.5)+c*(x)**(2.5))
 
 def objective_357(x, a, b, c):
-    return np.e ** (a+b*(x)**(1.5)+c*((x)**(3)))
+    return np.exp(a+b*(x)**(1.5)+c*((x)**(3)))
 
 def objective_358(x, a, b, c):
-    return np.e ** (a+b*(x)**(1.5)+c*(np.e)**(x))
+    return np.exp(a+b*(x)**(1.5)+c*(np.e)**(x))
 
 def objective_359(x, a, b, c):
-    return np.e ** (a+b*(x)**(1.5)+c*(x)**(0.5)*(np.log(x)))
+    return np.exp(a+b*(x)**(1.5)+c*(x)**(0.5)*(np.log(x)))
 
 def objective_360(x, a, b, c):
-    return np.e ** (a+b*(x)**(1.5)+c*((np.log(x)))**(2))
+    return np.exp(a+b*(x)**(1.5)+c*((np.log(x)))**(2))
 
 def objective_361(x, a, b, c):
-    return np.e ** (a+b*(x)**(1.5)+c*(x)/(np.log(x)))
+    return np.exp(a+b*(x)**(1.5)+c*(x)/(np.log(x)))
 
 def objective_362(x, a, b, c):
-    return np.e ** (a+b*(x)**(1.5)+c*(x)**(0.5))
+    return np.exp(a+b*(x)**(1.5)+c*(x)**(0.5))
 
 def objective_363(x, a, b, c):
-    return np.e ** (a+b*(x)**(1.5)+c*(np.log(x)))
+    return np.exp(a+b*(x)**(1.5)+c*(np.log(x)))
 
 def objective_364(x, a, b, c):
-    return np.e ** (a+b*(x)**(1.5)+c/(np.log(x)))
+    return np.exp(a+b*(x)**(1.5)+c/(np.log(x)))
 
 def objective_365(x, a, b, c):
-    return np.e ** (a+b*(x)**(1.5)+c/(x)**(0.5))
+    return np.exp(a+b*(x)**(1.5)+c/(x)**(0.5))
 
 def objective_366(x, a, b, c):
-    return np.e ** (a+b*(x)**(1.5)+c*(np.log(x))/(x))
+    return np.exp(a+b*(x)**(1.5)+c*(np.log(x))/(x))
 
 def objective_367(x, a, b, c):
-    return np.e ** (a+b*(x)**(1.5)+c/(x))
+    return np.exp(a+b*(x)**(1.5)+c/(x))
 
 def objective_368(x, a, b, c):
-    return np.e ** (a+b*(x)**(1.5)+c/(x)**(1.5))
+    return np.exp(a+b*(x)**(1.5)+c/(x)**(1.5))
 
 def objective_369(x, a, b, c):
-    return np.e ** (a+b*(x)**(1.5)+c*(np.log(x))/((x)**(2)))
+    return np.exp(a+b*(x)**(1.5)+c*(np.log(x))/((x)**(2)))
 
 def objective_370(x, a, b, c):
-    return np.e ** (a+b*(x)**(1.5)+c/((x)**(2)))
+    return np.exp(a+b*(x)**(1.5)+c/((x)**(2)))
 
 def objective_371(x, a, b, c):
-    return np.e ** (a+b*(x)**(1.5)+c*(np.e)**((-x)))
+    return np.exp(a+b*(x)**(1.5)+c*(np.e)**((-x)))
 
 def objective_372(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))+c*((x)**(2))*(np.log(x)))
+    return np.exp(a+b*((x)**(2))+c*((x)**(2))*(np.log(x)))
 
 def objective_373(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))+c*(x)**(2.5))
+    return np.exp(a+b*((x)**(2))+c*(x)**(2.5))
 
 def objective_374(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))+c*((x)**(3)))
+    return np.exp(a+b*((x)**(2))+c*((x)**(3)))
 
 def objective_375(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))+c*(np.e)**(x))
+    return np.exp(a+b*((x)**(2))+c*(np.e)**(x))
 
 def objective_376(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))+c*(x)**(0.5)*(np.log(x)))
+    return np.exp(a+b*((x)**(2))+c*(x)**(0.5)*(np.log(x)))
 
 def objective_377(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))+c*((np.log(x)))**(2))
+    return np.exp(a+b*((x)**(2))+c*((np.log(x)))**(2))
 
 def objective_378(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))+c*(x)/(np.log(x)))
+    return np.exp(a+b*((x)**(2))+c*(x)/(np.log(x)))
 
 def objective_379(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))+c*(x)**(0.5))
+    return np.exp(a+b*((x)**(2))+c*(x)**(0.5))
 
 def objective_380(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))+c*(np.log(x)))
+    return np.exp(a+b*((x)**(2))+c*(np.log(x)))
 
 def objective_381(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))+c/(np.log(x)))
+    return np.exp(a+b*((x)**(2))+c/(np.log(x)))
 
 def objective_382(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))+c/(x)**(0.5))
+    return np.exp(a+b*((x)**(2))+c/(x)**(0.5))
 
 def objective_383(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))+c*(np.log(x))/(x))
+    return np.exp(a+b*((x)**(2))+c*(np.log(x))/(x))
 
 def objective_384(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))+c/(x))
+    return np.exp(a+b*((x)**(2))+c/(x))
 
 def objective_385(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))+c/(x)**(1.5))
+    return np.exp(a+b*((x)**(2))+c/(x)**(1.5))
 
 def objective_386(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))+c*(np.log(x))/((x)**(2)))
+    return np.exp(a+b*((x)**(2))+c*(np.log(x))/((x)**(2)))
 
 def objective_387(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))+c/((x)**(2)))
+    return np.exp(a+b*((x)**(2))+c/((x)**(2)))
 
 def objective_388(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))+c*(np.e)**((-x)))
+    return np.exp(a+b*((x)**(2))+c*(np.e)**((-x)))
 
 def objective_389(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))*(np.log(x))+c*(x)**(2.5))
+    return np.exp(a+b*((x)**(2))*(np.log(x))+c*(x)**(2.5))
 
 def objective_390(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))*(np.log(x))+c*((x)**(3)))
+    return np.exp(a+b*((x)**(2))*(np.log(x))+c*((x)**(3)))
 
 def objective_391(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))*(np.log(x))+c*(np.e)**(x))
+    return np.exp(a+b*((x)**(2))*(np.log(x))+c*(np.e)**(x))
 
 def objective_392(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))*(np.log(x))+c*(x)**(0.5)*(np.log(x)))
+    return np.exp(a+b*((x)**(2))*(np.log(x))+c*(x)**(0.5)*(np.log(x)))
 
 def objective_393(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))*(np.log(x))+c*((np.log(x)))**(2))
+    return np.exp(a+b*((x)**(2))*(np.log(x))+c*((np.log(x)))**(2))
 
 def objective_394(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))*(np.log(x))+c*(x)/(np.log(x)))
+    return np.exp(a+b*((x)**(2))*(np.log(x))+c*(x)/(np.log(x)))
 
 def objective_395(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))*(np.log(x))+c*(x)**(0.5))
+    return np.exp(a+b*((x)**(2))*(np.log(x))+c*(x)**(0.5))
 
 def objective_396(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))*(np.log(x))+c*(np.log(x)))
+    return np.exp(a+b*((x)**(2))*(np.log(x))+c*(np.log(x)))
 
 def objective_397(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))*(np.log(x))+c/(np.log(x)))
+    return np.exp(a+b*((x)**(2))*(np.log(x))+c/(np.log(x)))
 
 def objective_398(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))*(np.log(x))+c/(x)**(0.5))
+    return np.exp(a+b*((x)**(2))*(np.log(x))+c/(x)**(0.5))
 
 def objective_399(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))*(np.log(x))+c*(np.log(x))/(x))
+    return np.exp(a+b*((x)**(2))*(np.log(x))+c*(np.log(x))/(x))
 
 def objective_400(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))*(np.log(x))+c/(x))
+    return np.exp(a+b*((x)**(2))*(np.log(x))+c/(x))
 
 def objective_401(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))*(np.log(x))+c/(x)**(1.5))
+    return np.exp(a+b*((x)**(2))*(np.log(x))+c/(x)**(1.5))
 
 def objective_402(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))*(np.log(x))+c*(np.log(x))/((x)**(2)))
+    return np.exp(a+b*((x)**(2))*(np.log(x))+c*(np.log(x))/((x)**(2)))
 
 def objective_403(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))*(np.log(x))+c/((x)**(2)))
+    return np.exp(a+b*((x)**(2))*(np.log(x))+c/((x)**(2)))
 
 def objective_404(x, a, b, c):
-    return np.e ** (a+b*((x)**(2))*(np.log(x))+c*(np.e)**((-x)))
+    return np.exp(a+b*((x)**(2))*(np.log(x))+c*(np.e)**((-x)))
 
 def objective_405(x, a, b, c):
-    return np.e ** (a+b*(x)**(2.5)+c*((x)**(3)))
+    return np.exp(a+b*(x)**(2.5)+c*((x)**(3)))
 
 def objective_406(x, a, b, c):
-    return np.e ** (a+b*(x)**(2.5)+c*(np.e)**(x))
+    return np.exp(a+b*(x)**(2.5)+c*(np.e)**(x))
 
 def objective_407(x, a, b, c):
-    return np.e ** (a+b*(x)**(2.5)+c*(x)**(0.5)*(np.log(x)))
+    return np.exp(a+b*(x)**(2.5)+c*(x)**(0.5)*(np.log(x)))
 
 def objective_408(x, a, b, c):
-    return np.e ** (a+b*(x)**(2.5)+c*((np.log(x)))**(2))
+    return np.exp(a+b*(x)**(2.5)+c*((np.log(x)))**(2))
 
 def objective_409(x, a, b, c):
-    return np.e ** (a+b*(x)**(2.5)+c*(x)/(np.log(x)))
+    return np.exp(a+b*(x)**(2.5)+c*(x)/(np.log(x)))
 
 def objective_410(x, a, b, c):
-    return np.e ** (a+b*(x)**(2.5)+c*(x)**(0.5))
+    return np.exp(a+b*(x)**(2.5)+c*(x)**(0.5))
 
 def objective_411(x, a, b, c):
-    return np.e ** (a+b*(x)**(2.5)+c*(np.log(x)))
+    return np.exp(a+b*(x)**(2.5)+c*(np.log(x)))
 
 def objective_412(x, a, b, c):
-    return np.e ** (a+b*(x)**(2.5)+c/(np.log(x)))
+    return np.exp(a+b*(x)**(2.5)+c/(np.log(x)))
 
 def objective_413(x, a, b, c):
-    return np.e ** (a+b*(x)**(2.5)+c/(x)**(0.5))
+    return np.exp(a+b*(x)**(2.5)+c/(x)**(0.5))
 
 def objective_414(x, a, b, c):
-    return np.e ** (a+b*(x)**(2.5)+c*(np.log(x))/(x))
+    return np.exp(a+b*(x)**(2.5)+c*(np.log(x))/(x))
 
 def objective_415(x, a, b, c):
-    return np.e ** (a+b*(x)**(2.5)+c/(x))
+    return np.exp(a+b*(x)**(2.5)+c/(x))
 
 def objective_416(x, a, b, c):
-    return np.e ** (a+b*(x)**(2.5)+c/(x)**(1.5))
+    return np.exp(a+b*(x)**(2.5)+c/(x)**(1.5))
 
 def objective_417(x, a, b, c):
-    return np.e ** (a+b*(x)**(2.5)+c*(np.log(x))/((x)**(2)))
+    return np.exp(a+b*(x)**(2.5)+c*(np.log(x))/((x)**(2)))
 
 def objective_418(x, a, b, c):
-    return np.e ** (a+b*(x)**(2.5)+c/((x)**(2)))
+    return np.exp(a+b*(x)**(2.5)+c/((x)**(2)))
 
 def objective_419(x, a, b, c):
-    return np.e ** (a+b*(x)**(2.5)+c*(np.e)**((-x)))
+    return np.exp(a+b*(x)**(2.5)+c*(np.e)**((-x)))
 
 def objective_420(x, a, b, c):
-    return np.e ** (a+b*((x)**(3))+c*(np.e)**(x))
+    return np.exp(a+b*((x)**(3))+c*(np.e)**(x))
 
 def objective_421(x, a, b, c):
-    return np.e ** (a+b*((x)**(3))+c*(x)**(0.5)*(np.log(x)))
+    return np.exp(a+b*((x)**(3))+c*(x)**(0.5)*(np.log(x)))
 
 def objective_422(x, a, b, c):
-    return np.e ** (a+b*((x)**(3))+c*((np.log(x)))**(2))
+    return np.exp(a+b*((x)**(3))+c*((np.log(x)))**(2))
 
 def objective_423(x, a, b, c):
-    return np.e ** (a+b*((x)**(3))+c*(x)/(np.log(x)))
+    return np.exp(a+b*((x)**(3))+c*(x)/(np.log(x)))
 
 def objective_424(x, a, b, c):
-    return np.e ** (a+b*((x)**(3))+c*(x)**(0.5))
+    return np.exp(a+b*((x)**(3))+c*(x)**(0.5))
 
 def objective_425(x, a, b, c):
-    return np.e ** (a+b*((x)**(3))+c*(np.log(x)))
+    return np.exp(a+b*((x)**(3))+c*(np.log(x)))
 
 def objective_426(x, a, b, c):
-    return np.e ** (a+b*((x)**(3))+c/(np.log(x)))
+    return np.exp(a+b*((x)**(3))+c/(np.log(x)))
 
 def objective_427(x, a, b, c):
-    return np.e ** (a+b*((x)**(3))+c/(x)**(0.5))
+    return np.exp(a+b*((x)**(3))+c/(x)**(0.5))
 
 def objective_428(x, a, b, c):
-    return np.e ** (a+b*((x)**(3))+c*(np.log(x))/(x))
+    return np.exp(a+b*((x)**(3))+c*(np.log(x))/(x))
 
 def objective_429(x, a, b, c):
-    return np.e ** (a+b*((x)**(3))+c/(x))
+    return np.exp(a+b*((x)**(3))+c/(x))
 
 def objective_430(x, a, b, c):
-    return np.e ** (a+b*((x)**(3))+c/(x)**(1.5))
+    return np.exp(a+b*((x)**(3))+c/(x)**(1.5))
 
 def objective_431(x, a, b, c):
-    return np.e ** (a+b*((x)**(3))+c*(np.log(x))/((x)**(2)))
+    return np.exp(a+b*((x)**(3))+c*(np.log(x))/((x)**(2)))
 
 def objective_432(x, a, b, c):
-    return np.e ** (a+b*((x)**(3))+c/((x)**(2)))
+    return np.exp(a+b*((x)**(3))+c/((x)**(2)))
 
 def objective_433(x, a, b, c):
-    return np.e ** (a+b*((x)**(3))+c*(np.e)**((-x)))
+    return np.exp(a+b*((x)**(3))+c*(np.e)**((-x)))
 
 def objective_434(x, a, b, c):
-    return np.e ** (a+b*(np.e)**(x)+c*(x)**(0.5)*(np.log(x)))
+    return np.exp(a+b*(np.e)**(x)+c*(x)**(0.5)*(np.log(x)))
 
 def objective_435(x, a, b, c):
-    return np.e ** (a+b*(np.e)**(x)+c*((np.log(x)))**(2))
+    return np.exp(a+b*(np.e)**(x)+c*((np.log(x)))**(2))
 
 def objective_436(x, a, b, c):
-    return np.e ** (a+b*(np.e)**(x)+c*(x)/(np.log(x)))
+    return np.exp(a+b*(np.e)**(x)+c*(x)/(np.log(x)))
 
 def objective_437(x, a, b, c):
-    return np.e ** (a+b*(np.e)**(x)+c*(x)**(0.5))
+    return np.exp(a+b*(np.e)**(x)+c*(x)**(0.5))
 
 def objective_438(x, a, b, c):
-    return np.e ** (a+b*(np.e)**(x)+c*(np.log(x)))
+    return np.exp(a+b*(np.e)**(x)+c*(np.log(x)))
 
 def objective_439(x, a, b, c):
-    return np.e ** (a+b*(np.e)**(x)+c/(np.log(x)))
+    return np.exp(a+b*(np.e)**(x)+c/(np.log(x)))
 
 def objective_440(x, a, b, c):
-    return np.e ** (a+b*(np.e)**(x)+c/(x)**(0.5))
+    return np.exp(a+b*(np.e)**(x)+c/(x)**(0.5))
 
 def objective_441(x, a, b, c):
-    return np.e ** (a+b*(np.e)**(x)+c*(np.log(x))/(x))
+    return np.exp(a+b*(np.e)**(x)+c*(np.log(x))/(x))
 
 def objective_442(x, a, b, c):
-    return np.e ** (a+b*(np.e)**(x)+c/(x))
+    return np.exp(a+b*(np.e)**(x)+c/(x))
 
 def objective_443(x, a, b, c):
-    return np.e ** (a+b*(np.e)**(x)+c/(x)**(1.5))
+    return np.exp(a+b*(np.e)**(x)+c/(x)**(1.5))
 
 def objective_444(x, a, b, c):
-    return np.e ** (a+b*(np.e)**(x)+c*(np.log(x))/((x)**(2)))
+    return np.exp(a+b*(np.e)**(x)+c*(np.log(x))/((x)**(2)))
 
 def objective_445(x, a, b, c):
-    return np.e ** (a+b*(np.e)**(x)+c/((x)**(2)))
+    return np.exp(a+b*(np.e)**(x)+c/((x)**(2)))
 
 def objective_446(x, a, b, c):
-    return np.e ** (a+b*(np.e)**(x)+c*(np.e)**((-x)))
+    return np.exp(a+b*(np.e)**(x)+c*(np.e)**((-x)))
 
 def objective_447(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)*(np.log(x))+c*((np.log(x)))**(2))
+    return np.exp(a+b*(x)**(0.5)*(np.log(x))+c*((np.log(x)))**(2))
 
 def objective_448(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)*(np.log(x))+c*(x)/(np.log(x)))
+    return np.exp(a+b*(x)**(0.5)*(np.log(x))+c*(x)/(np.log(x)))
 
 def objective_449(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)*(np.log(x))+c*(x)**(0.5))
+    return np.exp(a+b*(x)**(0.5)*(np.log(x))+c*(x)**(0.5))
 
 def objective_450(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)*(np.log(x))+c*(np.log(x)))
+    return np.exp(a+b*(x)**(0.5)*(np.log(x))+c*(np.log(x)))
 
 def objective_451(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)*(np.log(x))+c/(np.log(x)))
+    return np.exp(a+b*(x)**(0.5)*(np.log(x))+c/(np.log(x)))
 
 def objective_452(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)*(np.log(x))+c/(x)**(0.5))
+    return np.exp(a+b*(x)**(0.5)*(np.log(x))+c/(x)**(0.5))
 
 def objective_453(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)*(np.log(x))+c*(np.log(x))/(x))
+    return np.exp(a+b*(x)**(0.5)*(np.log(x))+c*(np.log(x))/(x))
 
 def objective_454(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)*(np.log(x))+c/(x))
+    return np.exp(a+b*(x)**(0.5)*(np.log(x))+c/(x))
 
 def objective_455(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)*(np.log(x))+c/(x)**(1.5))
+    return np.exp(a+b*(x)**(0.5)*(np.log(x))+c/(x)**(1.5))
 
 def objective_456(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)*(np.log(x))+c*(np.log(x))/((x)**(2)))
+    return np.exp(a+b*(x)**(0.5)*(np.log(x))+c*(np.log(x))/((x)**(2)))
 
 def objective_457(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)*(np.log(x))+c/((x)**(2)))
+    return np.exp(a+b*(x)**(0.5)*(np.log(x))+c/((x)**(2)))
 
 def objective_458(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)*(np.log(x))+c*(np.e)**((-x)))
+    return np.exp(a+b*(x)**(0.5)*(np.log(x))+c*(np.e)**((-x)))
 
 def objective_459(x, a, b, c):
-    return np.e ** (a+b*((np.log(x)))**(2)+c*(x)/(np.log(x)))
+    return np.exp(a+b*((np.log(x)))**(2)+c*(x)/(np.log(x)))
 
 def objective_460(x, a, b, c):
-    return np.e ** (a+b*((np.log(x)))**(2)+c*(x)**(0.5))
+    return np.exp(a+b*((np.log(x)))**(2)+c*(x)**(0.5))
 
 def objective_461(x, a, b, c):
-    return np.e ** (a+b*((np.log(x)))**(2)+c*(np.log(x)))
+    return np.exp(a+b*((np.log(x)))**(2)+c*(np.log(x)))
 
 def objective_462(x, a, b, c):
-    return np.e ** (a+b*((np.log(x)))**(2)+c/(np.log(x)))
+    return np.exp(a+b*((np.log(x)))**(2)+c/(np.log(x)))
 
 def objective_463(x, a, b, c):
-    return np.e ** (a+b*((np.log(x)))**(2)+c/(x)**(0.5))
+    return np.exp(a+b*((np.log(x)))**(2)+c/(x)**(0.5))
 
 def objective_464(x, a, b, c):
-    return np.e ** (a+b*((np.log(x)))**(2)+c*(np.log(x))/(x))
+    return np.exp(a+b*((np.log(x)))**(2)+c*(np.log(x))/(x))
 
 def objective_465(x, a, b, c):
-    return np.e ** (a+b*((np.log(x)))**(2)+c/(x))
+    return np.exp(a+b*((np.log(x)))**(2)+c/(x))
 
 def objective_466(x, a, b, c):
-    return np.e ** (a+b*((np.log(x)))**(2)+c/(x)**(1.5))
+    return np.exp(a+b*((np.log(x)))**(2)+c/(x)**(1.5))
 
 def objective_467(x, a, b, c):
-    return np.e ** (a+b*((np.log(x)))**(2)+c*(np.log(x))/((x)**(2)))
+    return np.exp(a+b*((np.log(x)))**(2)+c*(np.log(x))/((x)**(2)))
 
 def objective_468(x, a, b, c):
-    return np.e ** (a+b*((np.log(x)))**(2)+c/((x)**(2)))
+    return np.exp(a+b*((np.log(x)))**(2)+c/((x)**(2)))
 
 def objective_469(x, a, b, c):
-    return np.e ** (a+b*((np.log(x)))**(2)+c*(np.e)**((-x)))
+    return np.exp(a+b*((np.log(x)))**(2)+c*(np.e)**((-x)))
 
 def objective_470(x, a, b, c):
-    return np.e ** (a+b*(x)/(np.log(x))+c*(x)**(0.5))
+    return np.exp(a+b*(x)/(np.log(x))+c*(x)**(0.5))
 
 def objective_471(x, a, b, c):
-    return np.e ** (a+b*(x)/(np.log(x))+c*(np.log(x)))
+    return np.exp(a+b*(x)/(np.log(x))+c*(np.log(x)))
 
 def objective_472(x, a, b, c):
-    return np.e ** (a+b*(x)/(np.log(x))+c/(np.log(x)))
+    return np.exp(a+b*(x)/(np.log(x))+c/(np.log(x)))
 
 def objective_473(x, a, b, c):
-    return np.e ** (a+b*(x)/(np.log(x))+c/(x)**(0.5))
+    return np.exp(a+b*(x)/(np.log(x))+c/(x)**(0.5))
 
 def objective_474(x, a, b, c):
-    return np.e ** (a+b*(x)/(np.log(x))+c*(np.log(x))/(x))
+    return np.exp(a+b*(x)/(np.log(x))+c*(np.log(x))/(x))
 
 def objective_475(x, a, b, c):
-    return np.e ** (a+b*(x)/(np.log(x))+c/(x))
+    return np.exp(a+b*(x)/(np.log(x))+c/(x))
 
 def objective_476(x, a, b, c):
-    return np.e ** (a+b*(x)/(np.log(x))+c/(x)**(1.5))
+    return np.exp(a+b*(x)/(np.log(x))+c/(x)**(1.5))
 
 def objective_477(x, a, b, c):
-    return np.e ** (a+b*(x)/(np.log(x))+c*(np.log(x))/((x)**(2)))
+    return np.exp(a+b*(x)/(np.log(x))+c*(np.log(x))/((x)**(2)))
 
 def objective_478(x, a, b, c):
-    return np.e ** (a+b*(x)/(np.log(x))+c/((x)**(2)))
+    return np.exp(a+b*(x)/(np.log(x))+c/((x)**(2)))
 
 def objective_479(x, a, b, c):
-    return np.e ** (a+b*(x)/(np.log(x))+c*(np.e)**((-x)))
+    return np.exp(a+b*(x)/(np.log(x))+c*(np.e)**((-x)))
 
 def objective_480(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)+c*(np.log(x)))
+    return np.exp(a+b*(x)**(0.5)+c*(np.log(x)))
 
 def objective_481(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)+c/(np.log(x)))
+    return np.exp(a+b*(x)**(0.5)+c/(np.log(x)))
 
 def objective_482(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)+c/(x)**(0.5))
+    return np.exp(a+b*(x)**(0.5)+c/(x)**(0.5))
 
 def objective_483(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)+c*(np.log(x))/(x))
+    return np.exp(a+b*(x)**(0.5)+c*(np.log(x))/(x))
 
 def objective_484(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)+c/(x))
+    return np.exp(a+b*(x)**(0.5)+c/(x))
 
 def objective_485(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)+c/(x)**(1.5))
+    return np.exp(a+b*(x)**(0.5)+c/(x)**(1.5))
 
 def objective_486(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)+c*(np.log(x))/((x)**(2)))
+    return np.exp(a+b*(x)**(0.5)+c*(np.log(x))/((x)**(2)))
 
 def objective_487(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)+c/((x)**(2)))
+    return np.exp(a+b*(x)**(0.5)+c/((x)**(2)))
 
 def objective_488(x, a, b, c):
-    return np.e ** (a+b*(x)**(0.5)+c*(np.e)**((-x)))
+    return np.exp(a+b*(x)**(0.5)+c*(np.e)**((-x)))
 
 def objective_489(x, a, b, c):
-    return np.e ** (a+b*(np.log(x))+c/(np.log(x)))
+    return np.exp(a+b*(np.log(x))+c/(np.log(x)))
 
 def objective_490(x, a, b, c):
-    return np.e ** (a+b*(np.log(x))+c/(x)**(0.5))
+    return np.exp(a+b*(np.log(x))+c/(x)**(0.5))
 
 def objective_491(x, a, b, c):
-    return np.e ** (a+b*(np.log(x))+c*(np.log(x))/(x))
+    return np.exp(a+b*(np.log(x))+c*(np.log(x))/(x))
 
 def objective_492(x, a, b, c):
-    return np.e ** (a+b*(np.log(x))+c/(x))
+    return np.exp(a+b*(np.log(x))+c/(x))
 
 def objective_493(x, a, b, c):
-    return np.e ** (a+b*(np.log(x))+c/(x)**(1.5))
+    return np.exp(a+b*(np.log(x))+c/(x)**(1.5))
 
 def objective_494(x, a, b, c):
-    return np.e ** (a+b*(np.log(x))+c*(np.log(x))/((x)**(2)))
+    return np.exp(a+b*(np.log(x))+c*(np.log(x))/((x)**(2)))
 
 def objective_495(x, a, b, c):
-    return np.e ** (a+b*(np.log(x))+c/((x)**(2)))
+    return np.exp(a+b*(np.log(x))+c/((x)**(2)))
 
 def objective_496(x, a, b, c):
-    return np.e ** (a+b*(np.log(x))+c*(np.e)**((-x)))
+    return np.exp(a+b*(np.log(x))+c*(np.e)**((-x)))
 
 def objective_497(x, a, b, c):
-    return np.e ** (a+b/(np.log(x))+c/(x)**(0.5))
+    return np.exp(a+b/(np.log(x))+c/(x)**(0.5))
 
 def objective_498(x, a, b, c):
-    return np.e ** (a+b/(np.log(x))+c*(np.log(x))/(x))
+    return np.exp(a+b/(np.log(x))+c*(np.log(x))/(x))
 
 def objective_499(x, a, b, c):
-    return np.e ** (a+b/(np.log(x))+c/(x))
+    return np.exp(a+b/(np.log(x))+c/(x))
 
 def objective_500(x, a, b, c):
-    return np.e ** (a+b/(np.log(x))+c/(x)**(1.5))
+    return np.exp(a+b/(np.log(x))+c/(x)**(1.5))
 
 def objective_501(x, a, b, c):
-    return np.e ** (a+b/(np.log(x))+c*(np.log(x))/((x)**(2)))
+    return np.exp(a+b/(np.log(x))+c*(np.log(x))/((x)**(2)))
 
 def objective_502(x, a, b, c):
-    return np.e ** (a+b/(np.log(x))+c/((x)**(2)))
+    return np.exp(a+b/(np.log(x))+c/((x)**(2)))
 
 def objective_503(x, a, b, c):
-    return np.e ** (a+b/(np.log(x))+c*(np.e)**((-x)))
+    return np.exp(a+b/(np.log(x))+c*(np.e)**((-x)))
 
 def objective_504(x, a, b, c):
-    return np.e ** (a+b/(x)**(0.5)+c*(np.log(x))/(x))
+    return np.exp(a+b/(x)**(0.5)+c*(np.log(x))/(x))
 
 def objective_505(x, a, b, c):
-    return np.e ** (a+b/(x)**(0.5)+c/(x))
+    return np.exp(a+b/(x)**(0.5)+c/(x))
 
 def objective_506(x, a, b, c):
-    return np.e ** (a+b/(x)**(0.5)+c/(x)**(1.5))
+    return np.exp(a+b/(x)**(0.5)+c/(x)**(1.5))
 
 def objective_507(x, a, b, c):
-    return np.e ** (a+b/(x)**(0.5)+c*(np.log(x))/((x)**(2)))
+    return np.exp(a+b/(x)**(0.5)+c*(np.log(x))/((x)**(2)))
 
 def objective_508(x, a, b, c):
-    return np.e ** (a+b/(x)**(0.5)+c/((x)**(2)))
+    return np.exp(a+b/(x)**(0.5)+c/((x)**(2)))
 
 def objective_509(x, a, b, c):
-    return np.e ** (a+b/(x)**(0.5)+c*(np.e)**((-x)))
+    return np.exp(a+b/(x)**(0.5)+c*(np.e)**((-x)))
 
 def objective_510(x, a, b, c):
-    return np.e ** (a+b*(np.log(x))/(x)+c/(x))
+    return np.exp(a+b*(np.log(x))/(x)+c/(x))
 
 def objective_511(x, a, b, c):
-    return np.e ** (a+b*(np.log(x))/(x)+c/(x)**(1.5))
+    return np.exp(a+b*(np.log(x))/(x)+c/(x)**(1.5))
 
 def objective_512(x, a, b, c):
-    return np.e ** (a+b*(np.log(x))/(x)+c*(np.log(x))/((x)**(2)))
+    return np.exp(a+b*(np.log(x))/(x)+c*(np.log(x))/((x)**(2)))
 
 def objective_513(x, a, b, c):
-    return np.e ** (a+b*(np.log(x))/(x)+c/((x)**(2)))
+    return np.exp(a+b*(np.log(x))/(x)+c/((x)**(2)))
 
 def objective_514(x, a, b, c):
-    return np.e ** (a+b*(np.log(x))/(x)+c*(np.e)**((-x)))
+    return np.exp(a+b*(np.log(x))/(x)+c*(np.e)**((-x)))
 
 def objective_515(x, a, b, c):
-    return np.e ** (a+b/(x)+c/(x)**(1.5))
+    return np.exp(a+b/(x)+c/(x)**(1.5))
 
 def objective_516(x, a, b, c):
-    return np.e ** (a+b/(x)+c*(np.log(x))/((x)**(2)))
+    return np.exp(a+b/(x)+c*(np.log(x))/((x)**(2)))
 
 def objective_517(x, a, b, c):
-    return np.e ** (a+b/(x)+c/((x)**(2)))
+    return np.exp(a+b/(x)+c/((x)**(2)))
 
 def objective_518(x, a, b, c):
-    return np.e ** (a+b/(x)+c*(np.e)**((-x)))
+    return np.exp(a+b/(x)+c*(np.e)**((-x)))
 
 def objective_519(x, a, b, c):
-    return np.e ** (a+b/(x)**(1.5)+c*(np.log(x))/((x)**(2)))
+    return np.exp(a+b/(x)**(1.5)+c*(np.log(x))/((x)**(2)))
 
 def objective_520(x, a, b, c):
-    return np.e ** (a+b/(x)**(1.5)+c/((x)**(2)))
+    return np.exp(a+b/(x)**(1.5)+c/((x)**(2)))
 
 def objective_521(x, a, b, c):
-    return np.e ** (a+b/(x)**(1.5)+c*(np.e)**((-x)))
+    return np.exp(a+b/(x)**(1.5)+c*(np.e)**((-x)))
 
 def objective_522(x, a, b, c):
-    return np.e ** (a+b*(np.log(x))/((x)**(2))+c/((x)**(2)))
+    return np.exp(a+b*(np.log(x))/((x)**(2))+c/((x)**(2)))
 
 def objective_523(x, a, b, c):
-    return np.e ** (a+b*(np.log(x))/((x)**(2))+c*(np.e)**((-x)))
+    return np.exp(a+b*(np.log(x))/((x)**(2))+c*(np.e)**((-x)))
 
 def objective_524(x, a, b, c):
-    return np.e ** (a+b/((x)**(2))+c*(np.e)**((-x)))
+    return np.exp(a+b/((x)**(2))+c*(np.e)**((-x)))
 
 def objective_525(x, a, b, c):
     return (a+b*(x)+c*(x)*(np.log(x))) ** (-1)
@@ -9574,13 +9574,13 @@ def objective_3211(x, a, b, c, d, e, f, g, h, i, j, k):
     return a+b*(x)+c*((x)**(2))+d*((x)**(3))+e*((x)**(4))+f*((x)**(5))+g*((x)**(6))+h*((x)**(7))+i*((x)**(8))+j*((x)**(9))+k*((x)**(10))
 
 def objective_3212(x, a, b, c, d):
-    return np.e ** (a+b*(x)+c*((x)**(2))+d*((x)**(3)))
+    return np.exp(a+b*(x)+c*((x)**(2))+d*((x)**(3)))
 
 def objective_3213(x, a, b, c, d, e):
-    return np.e ** (a+b*(x)+c*((x)**(2))+d*((x)**(3))+e*((x)**(4)))
+    return np.exp(a+b*(x)+c*((x)**(2))+d*((x)**(3))+e*((x)**(4)))
 
 def objective_3214(x, a, b, c, d, e, f):
-    return np.e ** (a+b*(x)+c*((x)**(2))+d*((x)**(3))+e*((x)**(4))+f*((x)**(5)))
+    return np.exp(a+b*(x)+c*((x)**(2))+d*((x)**(3))+e*((x)**(4))+f*((x)**(5)))
 
 def objective_3215(x, a, b, c, d):
     return (a+b*(x)+c*((x)**(2))+d*((x)**(3))) ** (-1)
@@ -9766,16 +9766,16 @@ def objective_3278(x, a, c, b):
     return (a+c*(x))/((1)+b*(x)) 
 
 def objective_3279(x, a, c, b, d):
-    return (a+c*(x))/((1)+b*(x)+d*((x)**(2)))
+    return (a+c*(x))/((1)+b*(x)+d*((x)**(2))) 
 
 def objective_3280(x, a, c, e, b, d):
     return (a+c*(x)+e*((x)**(2)))/((1)+b*(x)+d*((x)**(2))) 
 
 def objective_3281(x, a, c, e, b, d, f):
-    return (a+c*(x)+e*((x)**(2)))/((1)+b*(x)+d*((x)**(2))+f*((x)**(3)))
+    return (a+c*(x)+e*((x)**(2)))/((1)+b*(x)+d*((x)**(2))+f*((x)**(3))) 
 
 def objective_3282(x, a, c, e, g, b, d, f):
-    return (a+c*(x)+e*((x)**(2))+g*((x)**(3)))/((1)+b*(x)+d*((x)**(2))+f*((x)**(3)))
+    return (a+c*(x)+e*((x)**(2))+g*((x)**(3)))/((1)+b*(x)+d*((x)**(2))+f*((x)**(3))) 
 
 def objective_3283(x, a, c, e, g, b, d, f, h):
     return (a+c*(x)+e*((x)**(2))+g*((x)**(3)))/((1)+b*(x)+d*((x)**(2))+f*((x)**(3))+h*((x)**(4))) 
