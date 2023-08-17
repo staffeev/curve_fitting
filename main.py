@@ -7,34 +7,34 @@ import time
 import multiprocessing as mp
 from matplotlib import pyplot
 import objective
+import objective_square
 
-
-# def objective(x, a, b, c, d, e, f):
-# 	return a + b / log(x) + c / (log(x) ** 2) + d / (log(x) ** 3) + e / (log(x) ** 4) + f / (log(x) ** 5)
 
 if __name__ == "__main__":
     dataframe = read_excel("points.xls", dtype=np.float64)
     x, y = dataframe["X"], dataframe["Y"]
+    y_square = y ** 2
     pool = mp.Pool(mp.cpu_count())
     start = time.time()
     names = [i for i in dir(objective) if i.startswith("objective_")]
     results = [pool.apply_async(curve_fit, args=(eval(f"objective.{f}"), x, y)) for f in names]
+    names2 = [i for i in dir(objective_square) if i.startswith("objective_") and not i.endswith("_sqrt")]
+    results2 = [pool.apply_async(curve_fit, args=(eval(f"objective_square.{f}"), x, y_square)) for f in names2]
     pool.close()
     print(time.time() - start)
 
 
     pyplot.scatter(x, y)
     # define a sequence of inputs between the smallest and largest known inputs
-    x_line = np.arange(min(x), max(x), 1)
+    x_line = np.arange(min(x), max(x), 0.001)
     # calculate the output for the range
     c = 0
     for x, i in zip(names, results):
-        c += 1
-        try:
-            func = eval(f"objective.{x}")
-            y_line = func(x_line, *i.get()[0])
-            # create a line plot for the mapping function
-            pyplot.plot(x_line, y_line, '--', color='red')
-        except:
-            pass
+        func = eval(f"objective.{x}")
+        y_line = func(x_line, *i.get()[0])
+        pyplot.plot(x_line, y_line, '--', color='red', )
+    for x, i in zip(names2, results2):
+        func = eval(f"objective_square.{x}_sqrt")
+        y_line = func(x_line, *i.get()[0])
+        pyplot.plot(x_line, y_line, '--', color='red', )
     pyplot.show()

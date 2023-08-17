@@ -1,10 +1,10 @@
 from re import findall, sub
+import os
+os.remove("objective.py")
+os.remove("objective_square.py")
 
 replace_exp = r"(\g<0>)"
 coef_replace_exp = r"\g<0>*"
-
-
-FUNCTION_PATTERN = "lambda x, {}: {}"
 
 FUNCTION_PATTERN = """
 def objective_{}(x, {}):
@@ -30,19 +30,37 @@ def parse_formula(s):
         s = sub(exp, repl_exp, s)
     return s, list(map(lambda x: x[0], findall(r"[a-z][+*/]", s)))
 
-res = set()
 f = list(map(str.strip, open("formulas3.txt").readlines()))
-c = 0
-c2 = 0
+file = open("objective.py", "a", encoding="utf-8")
+file2 = open("objective_square.py", "a", encoding="utf-8")
+func_with_square = []
 
+file.write("import numpy as np\n")
+file2.write("import numpy as np\n")
+x = 0
+for i in f:
+    s, letters = parse_formula(i)
+    v1, v2 = s.split("=")
+    if v1 == "(y)":
+        file.write(FUNCTION_PATTERN.format(x, ', '.join(letters), v2))
+        x += 1
+    elif v1 == "(np.log(y))":
+        file.write(FUNCTION_PATTERN.format(x, ", ".join(letters), f"np.e ** ({v2})"))
+        x += 1
+    elif v1 == "(y)**(0.5)":
+        file.write(FUNCTION_PATTERN.format(x, ", ".join(letters), f"({v2}) ** 2"))
+        x += 1
+    elif v1 == "((y)**(2))":
+        file2.write(FUNCTION_PATTERN.format(x, ", ".join(letters), v2))
+        file2.write(FUNCTION_PATTERN.format(f"{x}_sqrt", ", ".join(letters), f"np.sqrt({v2})"))
+        x += 1
+    elif v1 == "((y)**((-1)))":
+        file.write(FUNCTION_PATTERN.format(x, ", ".join(letters), f"({v2}) ** (-1)"))
+        x += 1
+    else:
+        print(v1)
+    #x += 1
+# file.write("]")
 
-with open("objective.py", "a", encoding="utf-8") as file:
-    # file.write("FUNCTIONS = [\n")
-    x = 0
-    for i in f:
-        s, letters = parse_formula(i)
-        v1, v2 = s.split("=")
-        if v1 == "(y)":
-            file.write(FUNCTION_PATTERN.format(x, ', '.join(letters), v2))
-            x += 1
-    # file.write("]")
+file.close()
+file2.close()
