@@ -11,6 +11,7 @@ from inspect import signature
 import objective
 import objective_square
 from tqdm import tqdm
+from csv import writer
 
 
 def metrics_calc(xdata, ydata, y_predicted, func):
@@ -45,10 +46,11 @@ if __name__ == "__main__":
     pool.close()
 
     res = [i.get() for i in metrics]
-    with open("metrics.txt", "w", encoding="utf-8") as file:
-        file.write("\n".join([";".join(map(str, i)) for i in res]))
 
-
+    with open("metrics.csv", "w", newline="", encoding="utf-8") as file:
+        w = writer(file, delimiter=";")
+        w.writerow(["r2", "adj_r2", "std_err", "max_err", "f_statistics"])
+        w.writerows(res)
 
     print(time.time() - start)
 
