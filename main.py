@@ -4,29 +4,31 @@ import numpy as np
 from numpy import *
 import time
 import multiprocessing as mp
-from matplotlib import pyplot
-from sklearn.metrics import max_error, r2_score
+from sklearn.metrics import max_error
 from inspect import signature
 import objective
 import objective_square
-from csv import writer
 from functions_parser import parse_formula
 from re import findall 
 
 
 def metrics_calc(xdata, ydata, y_predicted, func):
-    r2 = r2_score(ydata, y_predicted)
+    residuals = ydata - y_predicted
+    ss_res = np.sum(residuals ** 2)
+    ss_tot = np.sum((ydata - np.mean(ydata)) ** 2)
+    r2 = 1 - (ss_res / ss_tot)
     n = len(xdata)
     k = len(signature(func).parameters) - 1
     adj_r2 = 1 - ((1 - r2) * (n - 1) / (n - k - 1))
-    std_derr = np.sqrt(np.sum((ydata - y_predicted) ** 2) / (n - k - 1))
+    std_derr = np.sqrt(np.sum((ydata - np.mean(ydata)) ** 2) / (n - 1))
     std_err = np.sqrt(1 - adj_r2) * std_derr
     max_err = max_error(ydata, y_predicted)
-    f = (r2 / (1 - r2) * (n - k - 1) / k)
+    f = (r2 / (1 - r2)) * ((n - k - 1) / k)
     return r2, adj_r2, std_err, max_err, f
 
 
 if __name__ == "__main__":
+    start = time.time()
     dataframe = read_excel("points.xls", dtype=np.float64)
     x, y = dataframe["X"].to_numpy(), dataframe["Y"].to_numpy()
     y_square = y ** 2
@@ -48,7 +50,7 @@ if __name__ == "__main__":
 
     f_replaced = []
     formulas = read_excel("functions.xlsx", sheet_name="All_byParamNumber").iloc[:, 0].values.tolist()
-    formulas = [i for i in formulas if "=" in i]
+    formulas = [i.strip("[NL]") for i in formulas if "=" in i and "x" in i and "y" in i]
     for f, i in zip(formulas, func_and_metr):
         _, letters = parse_formula(f)
         new_f = f
@@ -59,14 +61,4 @@ if __name__ == "__main__":
     
     result_df = DataFrame(f_replaced, columns=["formula", "formula_with_coefficients", "r2", "adj_r2", "std_err","max_err", "f_stat"])
     result_df.to_excel("result.xlsx")
-
-
-    
-
-
-    # res = [i.get() for i in metrics]
-
-    # with open("metrics.csv", "w", newline="", encoding="utf-8") as file:
-    #     w = writer(file, delimiter=";")
-    #     w.writerow(["r2", "adj_r2", "std_err", "max_err", "f_statistics"])
-    #     w.writerows(res)
+    print(time.time() - start)

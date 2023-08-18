@@ -30,7 +30,6 @@ def parse_formula(s):
     return s, list(map(lambda x: x[0], findall(r"[a-z][+*/]", s)))
 
 
-
 if __name__ == "__main__":
     try:
         os.remove("objective.py")
