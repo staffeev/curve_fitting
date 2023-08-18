@@ -143,3 +143,7 @@ def objective_3223(x, a, b, c, d, e):
 
 def objective_3223_sqrt(x, a, b, c, d, e):
     return np.sqrt(a+b*(x)+c*((x)**(2))+d*((x)**(3))+e*((x)**(4)))
+
+
+all_objective_not_sqrt = [objective_100, objective_101, objective_102, objective_103, objective_104, objective_3222, objective_3223, objective_3224, objective_84, objective_85, objective_86, objective_87, objective_88, objective_89, objective_90, objective_91, objective_92, objective_93, objective_94, objective_95, objective_96, objective_97, objective_98, objective_99]
+all_objective_sqrt = [objective_100_sqrt, objective_101_sqrt, objective_102_sqrt, objective_103_sqrt, objective_104_sqrt, objective_3222_sqrt, objective_3223_sqrt, objective_3224_sqrt, objective_84_sqrt, objective_85_sqrt, objective_86_sqrt, objective_87_sqrt, objective_88_sqrt, objective_89_sqrt, objective_90_sqrt, objective_91_sqrt, objective_92_sqrt, objective_93_sqrt, objective_94_sqrt, objective_95_sqrt, objective_96_sqrt, objective_97_sqrt, objective_98_sqrt, objective_99_sqrt]

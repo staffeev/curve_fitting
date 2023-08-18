@@ -6,7 +6,8 @@ import time
 import multiprocessing as mp
 from sklearn.metrics import max_error
 from inspect import signature
-import objective
+from objective import all_objectives
+from objective_square import all_objective_not_sqrt, all_objective_sqrt
 import objective_square
 from functions_parser import parse_formula
 from re import findall 
