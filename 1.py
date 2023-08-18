@@ -5,37 +5,69 @@ from numpy import log
 import time
 from pandas import read_excel
 from scipy.optimize import curve_fit
+from sklearn.metrics import max_error, r2_score
 from matplotlib import pyplot
+from scipy.special import erf
+from inspect import signature
 
 
-def objective(x, a, b, c, d, e, f):
-    return np.exp(a+b*(x)+c*((x)**(2))+d*((x)**(3))+e*((x)**(4))+f*((x)**(5)))
+def metrics_calc(xdata, ydata, y_predicted, func):
+    # residuals = ydata - y_predicted
+    # ss_res = np.sum(residuals ** 2)
+    # ss_tot = np.sum((ydata - np.mean(ydata)) ** 2)
+    # r2 = 1 - (ss_res / ss_tot)
+    r2 = r2_score(ydata, y_predicted)
+    n = len(xdata)
+    k = len(signature(func).parameters) - 1
+    adj_r2 = 1 - ((1 - r2) * (n - 1) / (n - k - 1))
+    std_derr = np.sqrt(np.sum((ydata - y_predicted) ** 2) / (n - k - 1))
+    std_err = np.sqrt(1 - adj_r2) * std_derr
+    max_err = max_error(ydata, y_predicted)
+    f = np.var(ydata, ddof=1) / np.var(y_predicted, ddof=1)
+    return r2, adj_r2, std_err, max_err, f
 
-def objective_2769(x, a, c, e, g, i, k, b, d, f, h, j):
-    return (a+c*(x[1])+e*(x[2])+g*(x[3])+i*(x[4])+k*(x[5]))/((1)+b*(x[1])+d*(x[2])+f*(x[3])+h*(x[4])+j*(x[5])) 
 
+def objective(x, a, b, c, d, e, f, g, h, i, j):
+    return a+b/(x)+c/((x)**(2))+d/((x)**(3))+e/((x)**(4))+f/((x)**(5))+g/((x)**(6))+h/((x)**(7))+i/((x)**(8))+j/((x)**(9))
+
+
+# def objective(x, a, b, c, d, e):
+#     n= (x - c) / (np.sqrt(2) * d);
+#     return a + 0.5 * (b) * (1.0 + erf(n)-(e / abs(e)+erf(n-d / (np.sqrt(2) * e))) * np.exp(d * d / (2.0 * e * e) + (c-x)/e));
+
+
+def get_r2(y, *popt):
+    residuals = y - objective(x, *popt)
+    ss_res = np.sum(residuals ** 2)
+    ss_tot = np.sum((y - np.mean(y)) ** 2)
+    r2 = 1 - (ss_res / ss_tot)
+    return r2
 
 if __name__ == "__main__":
     dataframe = read_excel("points.xls", dtype=np.float64)
     x, y = dataframe["X"].to_numpy(), dataframe["Y"].to_numpy()
-    x2 = x * x
-    x3 = x2 * x
-    x4 = x3 * x
-    x5 = x4 * x
-    xdata = {1: x, 2: x2, 3: x3, 4: x4, 5: x5}
-    # pool = mp.Pool(mp.cpu_count())
     start = time.time()
-    popt = curve_fit(objective_2769, xdata, y, maxfev=5000)
-    # ob = [objective_0, objective_1, objective_2, objective_3, objective_4, objective_5, objective_6, objective_7, objective_8, objective_9]
-    #results = [pool.apply_async(curve_fit, args=(objective, x, y)) for _ in range(100000)]
-    #pool.close()
-    print(time.time() - start)
+    popt, _ = curve_fit(objective, x, y, maxfev=10000, method="dogbox")
+    print(popt)
 
-    # #x = np.sqrt(x)
+#    r2=0.3789190610316712 
+#    r2adj=0.373398341574175 
+#    StdErr=0.04208074166485599 
+#    Fstat=76.32980143554007 
+#    a= 86829.92657820386 
+#    b= -1394348.374608006 
+#    c= 9291917.141806583 
+#    d= -32084296.51834343 
+#    e= 54216579.05445311 
+#    f= -7313272.312338508 
+#    g= -148276675.6527885 
+#    h= 282478430.3803547 
+#    i= -228731606.3556824 
+#    j= 72370727.73126141 
+    print(metrics_calc(x, y, objective(x, *popt), objective))
+
     # pyplot.scatter(x, y)
-    # # define a sequence of inputs between the smallest and largest known inputs
-    # x_line = np.arange(min(x), max(x), 0.001)
-    # y_line = objective(x_line, *popt[0])
-    # # create a line plot for the mapping function
+    # x_line = np.arange(min(x), max(x), 0.0001)
+    # y_line = objective(x_line, *popt)
     # pyplot.plot(x_line, y_line, '--', color='red')
     # pyplot.show()
