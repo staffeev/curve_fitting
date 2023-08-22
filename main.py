@@ -1,73 +1,32 @@
 from pandas import read_excel
-from scipy.optimize import curve_fit
 import numpy as np
-from numpy import *
-import timeit
-import time
-import multiprocessing as mp
-from matplotlib import pyplot
-from sklearn.metrics import max_error
-from inspect import signature
-from objective import all_objectives
-from objective_square import all_objective_not_sqrt, all_objective_sqrt
-import objective_square
-from tqdm import tqdm
-from csv import writer
-
-
-def metrics_calc(xdata, ydata, y_predicted, func):
-    residuals = ydata - y_predicted
-    ss_res = np.sum(residuals ** 2)
-    ss_tot = np.sum((ydata - np.mean(ydata)) ** 2)
-    r2 = 1 - (ss_res / ss_tot)
-    n = len(xdata)
-    k = len(signature(func).parameters) - 1
-    adj_r2 = 1 - ((1 - r2) * (n - 1) / (n - k - 1))
-    std_derr = np.sqrt(np.sum((ydata - y_predicted) ** 2) / (n - k - 1))
-    std_err = np.sqrt(1 - adj_r2) * std_derr
-    max_err = max_error(ydata, y_predicted)
-    f = np.var(ydata, ddof=1) / np.var(y_predicted, ddof=1)
-    return r2, adj_r2, std_err, max_err, f
+from re import findall
+from functions_parser import parse_from_list
+from curve_fitting import find_popts_and_metrics, replace_coeffs_with_numbers, make_result_table
+from time import time
+import warnings
+warnings.filterwarnings("ignore")
 
 
 if __name__ == "__main__":
-    dataframe = read_excel("points.xls", dtype=np.float64)
-    x, y = dataframe["X"], dataframe["Y"]
-    y_square = y ** 2
-    pool = mp.Pool(mp.cpu_count())
-    start = time.time()
-    # names = [i for i in dir(objective) if i.startswith("objective_")]
-    results = [pool.apply_async(curve_fit, args=(obj, x, y), kwds={"maxfev": 10000}) for obj in all_objectives]
-    # names2 = [i for i in dir(objective_square) if i.startswith("objective_") and not i.endswith("_sqrt")]
-    results2 = [pool.apply_async(curve_fit, args=(obj, x, y_square), kwds={"maxfev": 10000}) for obj in all_objective_not_sqrt]
+    start = time()
+    formulas = read_excel("functions.xlsx", sheet_name="All_byParamNumber", header=None).iloc[:, 0].values.tolist()
+    formulas = [i.strip("[NL]") for i in formulas if "y" in i and "=" in i and "x" in i]  # оставляем только "простые" формулы
+    # парсинг формул и запись в файлы; если файлов нет, заменить False на True
+    params_and_types = parse_from_list(formulas, write_to_file=False)
+    dataframe = read_excel("points4.xlsx", dtype=np.float64)
+    x, y = dataframe["X"].to_numpy(), dataframe["Y"].to_numpy()
+    popts_and_metrics = find_popts_and_metrics(x, y, params_and_types)  # получение коэффициентовв и метрик
+    all_letters = [i[1][1] for i in sorted(params_and_types.items(), key=lambda x: int(findall(r"\d+", x[0])[0]))]
 
-    functions = all_objectives + all_objective_sqrt
-    results = [i.get()[0] for i in results] + [i.get()[0] for i in results2]
-    metrics = [pool.apply_async(metrics_calc, args=(x, y, f(x, *popt), f)) for f, popt in zip(functions, results)]
-    pool.close()
-
-    res = [i.get() for i in metrics]
-
-    with open("metrics.csv", "w", newline="", encoding="utf-8") as file:
-        w = writer(file, delimiter=";")
-        w.writerow(["r2", "adj_r2", "std_err", "max_err", "f_statistics"])
-        w.writerows(res)
-
-    print(time.time() - start)
+    # занесение в результирующую таблицу
+    results = []
+    for f, letters, pm in zip(formulas, all_letters, popts_and_metrics):
+        if pm is None:
+            continue
+        results.append((f, replace_coeffs_with_numbers(f, letters, pm[0]), len(letters), *pm[1]))
+    make_result_table(results)
+    print(f"Прошло времени: {time() - start} секунд")
 
 
-    # pyplot.scatter(x, y)
-    # x_line = np.arange(min(x), max(x), 0.001)
-    # c = 0
-    # for x, i in zip(names, results):
-    #     func = eval(f"objective.{x}")
-    #     y_line = func(x_line, *i.get()[0])
-    #     pyplot.plot(x_line, y_line, '--', color='red', )
-    #     c += 1
-    # for x, i in zip(names2, results2):
-    #     func = eval(f"objective_square.{x}_sqrt")
-    #     y_line = func(x_line, *i.get()[0])
-    #     pyplot.plot(x_line, y_line, '--', color='red', )
-    #     c += 1
-    # print(c)
-    # pyplot.show()
+    
