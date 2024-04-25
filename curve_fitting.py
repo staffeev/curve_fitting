@@ -11,10 +11,10 @@ from source.objectives import FUNCTIONS
 
 
 TRANSFORMATION_FUNC = {
-    "simple": lambda y: y,
-    "square": lambda y: y ** 2,
+    "simple": np.ravel,
+    "square": np.square,
     "sqrt": np.sqrt,
-    "inv": lambda y: 1 / y,
+    "inv": np.reciprocal,
     "ln": np.log,
     "exp": np.exp
 }
