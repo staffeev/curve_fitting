@@ -30,7 +30,8 @@ def get_solutions(
         y_list: List[float],
         z_list: Optional[List[float]] = None,
         rows_count: Optional[int] = None,
-        max_parameters: Optional[int] = None) -> List[Dict]:
+        max_parameters: Optional[int] = None,
+        use_only_max_dimension: Optional[bool] = False) -> List[Dict]:
     """
     Obtain the table with the best solutions by 2d equation solver for points data
 
@@ -40,6 +41,7 @@ def get_solutions(
     :param z_list: third log data list (z-curve)
     :param rows_count: result table rows count per function type
     :param max_parameters: max params number of the analyzed functions ("params" field in objectives.py)
+    :param use_only_max_dimension: if True and z_list is not None, solutions will be found only for 3D 
     :return: table with the best solutions by 2d solver
     """
     x_data = np.array(x_list)
@@ -48,7 +50,8 @@ def get_solutions(
     if z_list is not None: # find for 3D also
         z_data = np.array(z_list)
         fr_fit_metrics = find_fit_and_metrics(np.vstack((x_data, y_data)), z_data, max_parameters, 3)
-        # fr_fit_metrics.extend(find_fit_and_metrics(np.vstack((x_data, y_data)), z_data, max_parameters, 3))
+        if not use_only_max_dimension:
+            fr_fit_metrics.extend(find_fit_and_metrics(x_data, y_data, max_parameters, 2))
     else:
         fr_fit_metrics = find_fit_and_metrics(x_data, y_data, max_parameters, 2)
 
@@ -58,15 +61,16 @@ def get_solutions(
     for fun_record, fit, metrics in fr_fit_metrics:
         formula = fun_record['form']
         params = fun_record['params']
+        ndims = len(set(map(lambda x: x[0], re.findall(r"[x-z]", formula))))
         fin_eq = replace_constant_placeholders_with_numbers(formula, params, fit)
 
         results.append(
-            (formula, fin_eq, len(params), *metrics, fun_record['typ'])
+            (formula, fin_eq, len(params), *metrics, fun_record['typ'], ndims)
         )
 
     # make results table
     columns = ("formula", "formula_with_coefficients", "params_num", "r2",
-               "adj_r2", "std_err", "max_err", "f_stat", "func_type")
+               "adj_r2", "std_err", "max_err", "f_stat", "func_type", "n_dims")
     results.sort(key=itemgetter(8, 3), reverse=True)  # by type and then by r2
 
     sorted_table = [dict(zip(columns, res)) for res in results]
@@ -81,11 +85,12 @@ def get_solutions(
     type_cnt = defaultdict(int)
     for row in sorted_table:
         ft = row['func_type']
-        cnt = type_cnt[ft]
+        ndims = row["n_dims"]
+        cnt = type_cnt[(ndims, ft)]
 
         if rows_count is None or cnt < rows_count:
             res_table.append(row)
-            type_cnt[ft] += 1
+            type_cnt[(ndims, ft)] += 1
 
     return res_table
 
@@ -146,29 +151,3 @@ def evaluate_solver_equation(context: Dict, equation: str, x_data: NDArray,
         elif not (additional_power == 2 and er < 0):
             res.append((*val, er ** (1 / additional_power)))
     return res
-
-
-def evaluate_solver_equation2(context: Dict, equation: str, values: List[float]) -> List[Tuple[float, float]]:
-    """
-    Evaluate solver equation
-
-    :param context: Celery context
-    :param equation: equation as a formula string (2d solver result)
-    :param values: values to evaluate formula (x-values)
-    :return: x:y-values dict (formula eval result)
-    """
-    equation, dim, _ = parse_formula(equation)
-    left, right = equation.split('=')
-    left = left.replace("y", "").replace("z", "")
-    fty = FORMULA_START_TO_TYPE[left]
-
-    if dim == 2:
-        env = {"np": np, "x": values}
-    else:
-        env = {"np": np, "xy": values}
-
-    y_pred = TRANSFORMATION_FUNC[FUNC_TYPE_INVERSION[fty]](eval(right, env))
-    print(y_pred)
-    # print(eval(right, env))
-    # print(y_pred)
-    return np.vstack((values, y_pred)).T
