@@ -64,7 +64,7 @@ def metrics_calc(x_data: NDArray, y_data: NDArray, y_predicted: NDArray, func: C
     ss_res = np.sum(residuals ** 2)
     ss_tot = np.sum((y_data - np.mean(y_data)) ** 2)
     r2 = 1 - (ss_res / ss_tot)
-    n = len(x_data)
+    n = len(x_data) if x_data.ndim == 1 else len(x_data[0])
     k = len(signature(func).parameters) - 1
     adj_r2 = 1 - ((1 - r2) * (n - 1) / (n - k - 1))
     std_d_err = np.sqrt(np.sum((y_data - np.mean(y_data)) ** 2) / (n - 1))

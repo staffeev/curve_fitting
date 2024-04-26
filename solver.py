@@ -93,33 +93,38 @@ def get_solutions(
 
 
 # @app.task(name='solver.evaluate_solver_equation')
-def evaluate_solver_equation(context: Dict, equation: str, values: NDArray) -> List[Tuple[float, float]]:
+def evaluate_solver_equation(context: Dict, equation: str, x_data: NDArray,
+                             y_data: Optional[NDArray] = None) -> List[Tuple[float, float]]:
     """
     Evaluate solver equation
 
     :param context: Celery context
     :param equation: equation as a formula string (2d solver result)
-    :param values: values to evaluate formula (x-values)
-    :return: x:y-values dict (formula eval result)
+    :param x_data: x-values to evaluate formula
+    :param y_data: y-values to evaluate formula (for 3D curves)
+    :return: x:y-values or (x:y):z-values dict (formula eval result)
     """
     left, right = equation.split('=')
     num_variables = len(set(map(lambda x: x[0], re.findall(r"[x-z]", equation))))
     # check equation for power functions
+    power_pattern = r'y\^\(?(-?\d+\.?\d*)\)?' if num_variables == 2 else r'z\^\(?(-?\d+\.?\d*)\)?'
+
     if num_variables == 2:
         power_pattern = r'y\^\(?(-?\d+\.?\d*)\)?'  # y^(number)= or y^number=
         # check equation about lnx functions and filter negative values in that case
         if 'lnx' in right:
-            values = values[values > 0]
-        environment = {"np": np, "x": values}
+            x_data = x_data[x_data > 0]
     else:
         power_pattern = r'z\^\(?(-?\d+\.?\d*)\)?'  # z^(number)= or z^number=
+        xy = np.vstack((x_data, y_data))
         # check equation about lnx and lny functions and filter negative values in that case
         if 'lnx' in right:
-            values = values[:, np.where(values[0] > 0)[0]]
+            xy = xy[:, np.where(xy[0] > 0)[0]]
         if 'lny' in right:
-            values = values[:, np.where(values[1] > 0)[0]]
-        environment = {"np": np, "xy": values}
+            xy = xy[:, np.where(xy[1] > 0)[0]]
+        x_data, y_data = xy[0], xy[1]
 
+    environment = {"np": np, "x": x_data, "y": y_data}
 
     match = re.fullmatch(power_pattern, left)
     additional_power = float(match.group(1)) if match else 1
@@ -136,13 +141,14 @@ def evaluate_solver_equation(context: Dict, equation: str, values: NDArray) -> L
         return []
 
     res = []
-    for er, val in zip(list(eval_res), values):
+    vals = (x_data,) if num_variables == 2 else np.vstack((x_data, y_data)).T
+    for er, val in zip(list(eval_res), vals):
         if exp_res:
-            res.append((val, np.exp(er)))
+            res.append((*val, np.exp(er)))
         elif not (additional_power == 2 and er < 0):
-            res.append((val, er ** (1 / additional_power)))
-    # print(eval_res)
-    # print(res)
+            res.append((*val, er ** (1 / additional_power)))
+    print(eval_res)
+    print(res)
     return res
 
 
