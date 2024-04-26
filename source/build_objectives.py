@@ -40,9 +40,11 @@ def parse_formula(formula: str) -> Tuple[str, List[str], List[str]]:
     """
     for exp, exp_to_replace in RULES.items():
         formula = sub(exp, exp_to_replace, formula)
-    variables = len(set(map(lambda x: x[0], findall(r"[x-z]", formula))))
+    num_variables = len(set(map(lambda x: x[0], findall(r"[x-z]", formula))))
     constants = list(map(lambda x: x[0], findall(r"[A-Z][+*/\^]", formula)))
-    return formula, variables, constants
+    if num_variables == 3:
+        formula = sub(r"X", r"xy[0]", sub(r"y", r"xy[1]", sub(r"x", r"X", formula)))
+    return formula, num_variables, constants
 
 
 def parse_source(formulas: Iterable[str]):
@@ -60,20 +62,24 @@ def parse_source(formulas: Iterable[str]):
         for form_raw in formulas:
             if "exp" in form_raw.lower() or "pow" in form_raw.lower(): # TODO: что делать с такими функиями?
                 continue
+            print(form_raw)
             form, variables, letters = parse_formula(form_raw)
+            print(form)
             left, right = form.split("=")
             left = left.replace("y", "").replace("z", "")
             fty = FORMULA_START_TO_TYPE[left]
             args = ", ".join(letters)
             letters = ', '.join(f"'{sym}'" for sym in letters)
 
-            if variables == 2: # 2D
-                res_file.write(FUNCTION_PATTERN.format(form_raw, "x", args, right, fty, variables, letters))
-            else: # 3D
-                right = sub(r"x", r"X", right)
-                right = sub(r"y", r"xy[1]", right)
-                right = sub(r"X", r"xy[0]", right)
-                res_file.write(FUNCTION_PATTERN.format(form_raw, "xy", args, right, fty, variables, letters))
+            var_symbol = "x" if variables == 2 else "xy"
+            res_file.write(FUNCTION_PATTERN.format(form_raw, var_symbol, args, right, fty, variables, letters))
+            # if variables == 2: # 2D
+            #     res_file.write(FUNCTION_PATTERN.format(form_raw, "x", args, right, fty, variables, letters))
+            # else: # 3D
+            #     right = sub(r"x", r"X", right)
+            #     right = sub(r"y", r"xy[1]", right)
+            #     right = sub(r"X", r"xy[0]", right)
+            #     res_file.write(FUNCTION_PATTERN.format(form_raw, "xy", args, right, fty, variables, letters))
 
         res_file.write(')\n')
 

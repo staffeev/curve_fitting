@@ -1328,3 +1328,13 @@ FORMULAS = (
     'y=(A+Cx+Ex^2+Gx^3+Ix^4+Kx^5)/(1+Bx+Dx^2+Fx^3+Hx^4+Jx^5)',
     'y=(A+Cx^2+Ex^4+Gx^6)/(1+Bx^2+Dx^4+Fx^6+Hx^8)'
 )
+
+# FORMULAS = (
+#     # "lny=A+Bx^2",
+#     # "y^2=A+Bx^(0.5)lnx",
+#     # "y=A+Bx+Cxlnx+D/lnx+E/x^(1.5)",
+#     # "y^(-1)=A+Blnx/x^2",
+#     # "y^(0.5)=A+Blnx/x",
+#     # "y=A+Bx",
+#     "y^(-1)=A+Bx+Cx^2+Dx^3+Ex^4+Fx^5",
+# )

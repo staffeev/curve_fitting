@@ -103,13 +103,15 @@ def process_function(func: Callable, x_data: NDArray, y_data: NDArray, func_type
         return None
 
 
-def find_fit_and_metrics(x_data: NDArray, y_data: NDArray, max_parameters: Optional[int]) -> List:
+def find_fit_and_metrics(x_data: NDArray, y_data: NDArray, max_parameters: Optional[int], 
+                         dim: int = 2) -> List:
     """
     Process given function (use non-linear least squares to fit a function and calculate its metrics)
 
     :param x_data: x-values
     :param y_data: y-values
     :param max_parameters: max params number of the analyzed functions
+    :param dim: number of curve dimensions (2 or 3)
     :return: list of function record, function fitted and its metrics
     """
     results = []
@@ -120,7 +122,7 @@ def find_fit_and_metrics(x_data: NDArray, y_data: NDArray, max_parameters: Optio
         max_parameters = min(max_parameters, x_data.shape[0])  # curve_fit limitation
 
     for fun_record in FUNCTIONS:
-        if len(fun_record['params']) > max_parameters:
+        if len(fun_record['params']) > max_parameters or fun_record["dim"] != dim:
             continue
 
         processing_result = process_function(fun_record['fun'], x_data, y_data, fun_record['typ'])
@@ -128,6 +130,8 @@ def find_fit_and_metrics(x_data: NDArray, y_data: NDArray, max_parameters: Optio
         if processing_result:
             fit, metrics = processing_result
             results.append((fun_record, fit, metrics))
+        # else:
+        #     print(fun_record)
 
     return results
 
