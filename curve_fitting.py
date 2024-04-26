@@ -115,16 +115,19 @@ def find_fit_and_metrics(x_data: NDArray, y_data: NDArray, max_parameters: Optio
     :return: list of function record, function fitted and its metrics
     """
     results = []
-
+    #print(len(x_data))
     if max_parameters is None:
-        max_parameters = x_data.shape[0]
+        max_parameters = len(x_data.ravel()) // x_data.shape[0]
     else:
-        max_parameters = min(max_parameters, x_data.shape[0])  # curve_fit limitation
-
+        max_parameters = min(max_parameters, len(x_data.ravel()) // x_data.shape[0])  # curve_fit limitation
+    # print("PARS", max_parameters)
     for fun_record in FUNCTIONS:
-        if len(fun_record['params']) > max_parameters or fun_record["dim"] != dim:
+        # print(fun_record['params'], max_parameters)
+        # if len(fun_record['params']) > max_parameters or fun_record["dim"] != dim:
+        #     continue
+        if fun_record["dim"] != dim:
             continue
-
+        # print("VVVVVV")
         processing_result = process_function(fun_record['fun'], x_data, y_data, fun_record['typ'])
 
         if processing_result:

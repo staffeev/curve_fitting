@@ -45,10 +45,13 @@ def get_solutions(
     x_data = np.array(x_list)
     y_data = np.array(y_list)
 
-    fr_fit_metrics = find_fit_and_metrics(x_data, y_data, max_parameters, 2)
+    # fr_fit_metrics = find_fit_and_metrics(x_data, y_data, max_parameters, 2)
     if z_list is not None: # find for 3D also
         z_data = np.array(z_list)
-        fr_fit_metrics.extend(find_fit_and_metrics(np.vstack((x_data, y_data)), z_data, max_parameters, 3))
+        fr_fit_metrics = find_fit_and_metrics(np.vstack((x_data, y_data)), z_data, max_parameters, 3)
+        # fr_fit_metrics.extend(find_fit_and_metrics(np.vstack((x_data, y_data)), z_data, max_parameters, 3))
+    else:
+        fr_fit_metrics = find_fit_and_metrics(x_data, y_data, max_parameters, 2)
 
 
     results = []
@@ -68,6 +71,11 @@ def get_solutions(
     results.sort(key=itemgetter(8, 3), reverse=True)  # by type and then by r2
 
     sorted_table = [dict(zip(columns, res)) for res in results]
+
+    import pandas as pd
+
+    df = pd.DataFrame(sorted_table)
+    df.to_excel("RESULT.xlsx", index=False)
 
     # we need rows_count best results of every function type we get (5 simple, 5 sqrt, etc)
     res_table = []
@@ -133,8 +141,8 @@ def evaluate_solver_equation(context: Dict, equation: str, values: NDArray) -> L
             res.append((val, np.exp(er)))
         elif not (additional_power == 2 and er < 0):
             res.append((val, er ** (1 / additional_power)))
-    print(eval_res)
-    print(res)
+    # print(eval_res)
+    # print(res)
     return res
 
 
