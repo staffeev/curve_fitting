@@ -72,11 +72,6 @@ def get_solutions(
 
     sorted_table = [dict(zip(columns, res)) for res in results]
 
-    import pandas as pd
-
-    df = pd.DataFrame(sorted_table)
-    df.to_excel("RESULT.xlsx", index=False)
-
     # we need rows_count best results of every function type we get (5 simple, 5 sqrt, etc)
     res_table = []
 
@@ -141,14 +136,12 @@ def evaluate_solver_equation(context: Dict, equation: str, x_data: NDArray,
         return []
 
     res = []
-    vals = (x_data,) if num_variables == 2 else np.vstack((x_data, y_data)).T
+    vals = np.array([x_data]).T if num_variables == 2 else np.vstack((x_data, y_data)).T
     for er, val in zip(list(eval_res), vals):
         if exp_res:
             res.append((*val, np.exp(er)))
         elif not (additional_power == 2 and er < 0):
             res.append((*val, er ** (1 / additional_power)))
-    print(eval_res)
-    print(res)
     return res
 
 

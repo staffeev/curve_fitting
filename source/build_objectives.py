@@ -62,9 +62,7 @@ def parse_source(formulas: Iterable[str]):
         for form_raw in formulas:
             if "exp" in form_raw.lower() or "pow" in form_raw.lower(): # TODO: что делать с такими функиями?
                 continue
-            print(form_raw)
             form, variables, letters = parse_formula(form_raw)
-            print(form)
             left, right = form.split("=")
             left = left.replace("y", "").replace("z", "")
             fty = FORMULA_START_TO_TYPE[left]
@@ -73,13 +71,6 @@ def parse_source(formulas: Iterable[str]):
 
             var_symbol = "x" if variables == 2 else "xy"
             res_file.write(FUNCTION_PATTERN.format(form_raw, var_symbol, args, right, fty, variables, letters))
-            # if variables == 2: # 2D
-            #     res_file.write(FUNCTION_PATTERN.format(form_raw, "x", args, right, fty, variables, letters))
-            # else: # 3D
-            #     right = sub(r"x", r"X", right)
-            #     right = sub(r"y", r"xy[1]", right)
-            #     right = sub(r"X", r"xy[0]", right)
-            #     res_file.write(FUNCTION_PATTERN.format(form_raw, "xy", args, right, fty, variables, letters))
 
         res_file.write(')\n')
 
